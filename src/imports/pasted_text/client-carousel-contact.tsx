@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Slider from 'react-slick';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { ImageWithFallback } from './components/figma/ImageWithFallback';
+import { ImageWithFallback } from '../../app/components/figma/ImageWithFallback';
 
 const CustomPrevArrow = ({ onClick }: any) => (
   <button

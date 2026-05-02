@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Slider from 'react-slick';
-import { Facebook, Twitter, Instagram, Linkedin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 
 const CustomPrevArrow = ({ onClick }: any) => (
@@ -222,16 +222,32 @@ export default function App() {
             {/* Social Media Icons */}
             <div className="flex gap-4">
               <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-                <Facebook size={18} />
+                {/* Facebook */}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
               </a>
               <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-                <Twitter size={18} />
+                {/* Twitter / X */}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4l16 16M4 20L20 4"/>
+                </svg>
               </a>
               <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-                <Instagram size={18} />
+                {/* Instagram */}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                </svg>
               </a>
               <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors">
-                <Linkedin size={18} />
+                {/* LinkedIn */}
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
               </a>
             </div>
             {/* Copyright */}

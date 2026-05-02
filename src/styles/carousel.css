@@ -1,0 +1,33 @@
+/* Carousel Custom Styles */
+.slick-dots {
+  bottom: -50px !important;
+}
+
+.slick-dots li {
+  margin: 0 6px;
+}
+
+.slick-dots li button:before {
+  font-size: 9px !important;
+  color: #2a2a2a !important;
+  opacity: 0.25 !important;
+  transition: all 0.3s ease !important;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: #2a2a2a !important;
+  transform: scale(1.2);
+}
+
+.slick-dots li button:hover:before {
+  opacity: 0.6 !important;
+}
+
+.slick-slide {
+  transition: all 0.3s ease;
+}
+
+.slick-slide > div {
+  padding: 0 4px;
+}

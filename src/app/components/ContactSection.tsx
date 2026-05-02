@@ -1,6 +1,4 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { Input } from './ui/input';
-import { Button } from './ui/button';
 
 export default function ContactSection() {
   return (
@@ -56,26 +54,26 @@ export default function ContactSection() {
           <div>
             <form className="space-y-6">
               <div>
-                <Input
+                <input
                   type="text"
                   placeholder="Your Name"
-                  className="bg-white border-[#d0d0d0] py-6"
+                  className="w-full bg-white border border-[#d0d0d0] rounded-lg px-4 py-6 focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
 
               <div>
-                <Input
+                <input
                   type="email"
                   placeholder="Email Address"
-                  className="bg-white border-[#d0d0d0] py-6"
+                  className="w-full bg-white border border-[#d0d0d0] rounded-lg px-4 py-6 focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
 
               <div>
-                <Input
+                <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="bg-white border-[#d0d0d0] py-6"
+                  className="w-full bg-white border border-[#d0d0d0] rounded-lg px-4 py-6 focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
 
@@ -87,12 +85,12 @@ export default function ContactSection() {
                 />
               </div>
 
-              <Button
+              <button
                 type="submit"
-                className="w-full bg-black text-white py-6 uppercase tracking-[0.2em] text-sm hover:bg-[#2a2a2a] transition-colors duration-300"
+                className="w-full bg-black text-white py-6 uppercase tracking-[0.2em] text-sm hover:bg-[#2a2a2a] transition-colors duration-300 rounded-lg"
               >
                 Submit Inquiry
-              </Button>
+              </button>
             </form>
           </div>
         </div>

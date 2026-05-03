@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Thoughtfully crafted. Exceptionally yours.",
   icons: [
     { rel: 'icon', url: '/Bespoke__6_.png', type: 'image/png' },
-    { rel: 'shortcut icon', url: '/Bespoke__6_.png' },
+    { rel: 'shortcut icon', url: '/Bespoke__6_.png', type: 'image/png' },
     { rel: 'apple-touch-icon', url: '/Bespoke__6_.png' },
   ],
 };

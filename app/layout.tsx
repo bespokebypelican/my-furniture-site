@@ -13,8 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bespoke By Pelican",
-  description: "Thoughtfully crafted. Exceptionally yours.",
+  title: "Bespoke By Pelican | Luxury Custom Furniture",
+  description: "Bespoke by Pelican crafts premium custom furniture solutions designed to your requirement. Thoughtfully crafted, exceptionally yours. Based in Bengaluru, India.",
+  keywords: "bespoke furniture, custom furniture, luxury furniture, furniture design, Bengaluru furniture, custom sofa, interior design",
+  openGraph: {
+    title: "Bespoke By Pelican | Luxury Custom Furniture",
+    description: "Premium custom furniture solutions designed to your requirement.",
+    url: "https://bespokebypelican.com",
+    siteName: "Bespoke By Pelican",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bespoke By Pelican | Luxury Custom Furniture",
+    description: "Premium custom furniture solutions designed to your requirement.",
+  },
   icons: [
     { rel: 'icon', url: '/bird-favicon.png', type: 'image/png' },
   ],

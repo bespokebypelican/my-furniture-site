@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FurnitureCard } from "./FurnitureCard";
 
 export const collageItems = [
@@ -18,23 +18,59 @@ export const collageItems = [
 type CollageItem = typeof collageItems[number];
 
 export function CollageLayout({ items = collageItems }: { items?: CollageItem[] }) {
-  const [activeId, setActiveId] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const lastItemRef = useRef<HTMLDivElement>(null);
+  const isScrollingBack = useRef(false);
 
-  const handleTap = (id: number) => {
-    setActiveId(activeId === id ? null : id);
+  const displayItems = [...items, ...items];
+
+  const handleTap = (index: number) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    const lastItem = lastItemRef.current;
+    const grid = gridRef.current;
+    if (!lastItem || !grid) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !isScrollingBack.current) {
+          isScrollingBack.current = true;
+          window.scrollTo({ top: grid.offsetTop, behavior: "smooth" });
+          // Reset flag after scroll animation completes
+          setTimeout(() => {
+            isScrollingBack.current = false;
+          }, 1500);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    observer.observe(lastItem);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div style={{ columns: "3", columnGap: "8px", width: "100%" }} className="masonry-grid">
-      {items.map((item) => (
-        <div key={item.id} style={{ breakInside: "avoid", marginBottom: "8px" }}>
+    <div
+      ref={gridRef}
+      style={{ columns: "3", columnGap: "8px", width: "100%" }}
+      className="masonry-grid"
+    >
+      {displayItems.map((item, index) => (
+        <div
+          key={`${item.id}-${index}`}
+          ref={index === displayItems.length - 1 ? lastItemRef : undefined}
+          style={{ breakInside: "avoid", marginBottom: "8px" }}
+        >
           <FurnitureCard
             imageUrl={item.imageUrl}
             title={item.title}
             category={item.category}
             aspectRatio={item.aspectRatio}
-            isActive={activeId === item.id}
-            onTap={() => handleTap(item.id)}
+            isActive={activeIndex === index}
+            onTap={() => handleTap(index)}
           />
         </div>
       ))}

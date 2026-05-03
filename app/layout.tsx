@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Bespoke By Pelican",
   description: "Thoughtfully crafted. Exceptionally yours.",
-  icons: {
-    icon: '/Bespoke__6_.png',
-    shortcut: '/Bespoke__6_.png',
-    apple: '/Bespoke__6_.png',
-  },
+  icons: [
+    { rel: 'icon', url: '/Bespoke__6_.png', type: 'image/png' },
+    { rel: 'shortcut icon', url: '/Bespoke__6_.png' },
+    { rel: 'apple-touch-icon', url: '/Bespoke__6_.png' },
+  ],
 };
 
 export default function RootLayout({

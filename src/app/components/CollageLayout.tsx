@@ -1,6 +1,7 @@
 "use client"
 import { useState, useRef, useEffect } from "react";
 import { FurnitureCard } from "./FurnitureCard";
+import { supabase } from "../../../lib/supabase";
 
 export const collageItems = [
   { id: 1, imageUrl: "https://images.unsplash.com/photo-1687180497278-ca4d736ecc99?w=1080&q=80", title: "Modern Living Space", category: "Living Room", aspectRatio: "3/2" },
@@ -17,13 +18,38 @@ export const collageItems = [
 
 type CollageItem = typeof collageItems[number];
 
+type SupabasePhoto = {
+  id: number;
+  image_url: string;
+  title?: string;
+  category?: string;
+  aspect_ratio?: string;
+};
+
 export function CollageLayout({ items = collageItems }: { items?: CollageItem[] }) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [sourceItems, setSourceItems] = useState<CollageItem[]>(items);
   const gridRef = useRef<HTMLDivElement>(null);
   const lastItemRef = useRef<HTMLDivElement>(null);
   const isScrollingBack = useRef(false);
 
-  const displayItems = [...items, ...items];
+  useEffect(() => {
+    async function fetchPhotos() {
+      const { data, error } = await supabase.from("inspiration_photos").select("*");
+      if (error || !data || data.length === 0) return;
+      const mapped: CollageItem[] = (data as SupabasePhoto[]).map((row) => ({
+        id: row.id,
+        imageUrl: row.image_url,
+        title: row.title ?? "",
+        category: row.category ?? "",
+        aspectRatio: row.aspect_ratio ?? "4/3",
+      }));
+      setSourceItems(mapped);
+    }
+    fetchPhotos();
+  }, []);
+
+  const displayItems = [...sourceItems, ...sourceItems];
 
   const handleTap = (index: number) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -39,7 +65,6 @@ export function CollageLayout({ items = collageItems }: { items?: CollageItem[] 
         if (entries[0].isIntersecting && !isScrollingBack.current) {
           isScrollingBack.current = true;
           window.scrollTo({ top: grid.offsetTop, behavior: "smooth" });
-          // Reset flag after scroll animation completes
           setTimeout(() => {
             isScrollingBack.current = false;
           }, 1500);
@@ -50,7 +75,7 @@ export function CollageLayout({ items = collageItems }: { items?: CollageItem[] 
 
     observer.observe(lastItem);
     return () => observer.disconnect();
-  }, []);
+  }, [displayItems.length]);
 
   return (
     <div

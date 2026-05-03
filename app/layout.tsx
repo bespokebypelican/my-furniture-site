@@ -16,9 +16,7 @@ export const metadata: Metadata = {
   title: "Bespoke By Pelican",
   description: "Thoughtfully crafted. Exceptionally yours.",
   icons: [
-    { rel: 'icon', url: '/favicon.ico' },
-    { rel: 'shortcut icon', url: '/favicon.ico' },
-    { rel: 'apple-touch-icon', url: '/favicon.ico' },
+    { rel: 'icon', url: '/bird-favicon.png', type: 'image/png' },
   ],
 };
 

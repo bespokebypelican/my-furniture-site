@@ -23,13 +23,7 @@ export function FurnitureCard({ imageUrl, title, category, isActive, onTap }: Fu
       onMouseLeave={() => { if (!isTouch) setIsHovered(false); }}
       onClick={onTap}
     >
-      <motion.img
-        src={imageUrl}
-        alt={title}
-        style={{ width: "100%", height: "auto", display: "block" }}
-        animate={{ scale: showPanel ? 1.02 : 1 }}
-        transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-      />
+      <img src={imageUrl} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
 
       <motion.div
         className="absolute bottom-0 left-0 right-0"

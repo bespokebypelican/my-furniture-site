@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     title: "Bespoke By Pelican | Luxury Custom Furniture",
     description: "Premium custom furniture solutions designed to your requirement.",
   },
-  icons: [
-    { rel: 'icon', url: '/bird-favicon.png', type: 'image/png' },
-  ],
+  icons: {
+    icon: '/favicon.ico?v=3',
+  },
 };
 
 export default function RootLayout({

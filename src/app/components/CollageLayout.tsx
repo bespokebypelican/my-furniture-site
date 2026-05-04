@@ -44,13 +44,16 @@ export function CollageLayout() {
         return;
       }
       setPhotos(
-        (data ?? []).map((row: SupabasePhoto) => ({
-          id: row.id,
-          imageUrl: row.image_url,
-          title: row.title ?? "",
-          category: row.category ?? "",
-          aspectRatio: row.aspect_ratio ?? "4/3",
-        }))
+        (data ?? []).map((row: SupabasePhoto) => {
+          console.log(row);
+          return {
+            id: row.id,
+            imageUrl: row.image_url ?? (row as any).Image_url ?? "",
+            title: row.title ?? "",
+            category: row.category ?? "",
+            aspectRatio: row.aspect_ratio ?? "4/3",
+          };
+        })
       );
     }, 300);
     return () => clearTimeout(timer);

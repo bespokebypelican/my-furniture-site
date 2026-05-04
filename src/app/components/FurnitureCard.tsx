@@ -6,12 +6,11 @@ interface FurnitureCardProps {
   imageUrl: string;
   title: string;
   category: string;
-  aspectRatio: string;
   isActive: boolean;
   onTap: () => void;
 }
 
-export function FurnitureCard({ imageUrl, title, category, aspectRatio, isActive, onTap }: FurnitureCardProps) {
+export function FurnitureCard({ imageUrl, title, category, isActive, onTap }: FurnitureCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const isTouch = typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
   const showPanel = isTouch ? isActive : isHovered;
@@ -19,7 +18,7 @@ export function FurnitureCard({ imageUrl, title, category, aspectRatio, isActive
   return (
     <div
       className="relative overflow-hidden cursor-pointer w-full"
-      style={{ aspectRatio, borderRadius: 0 }}
+      style={{ borderRadius: 0 }}
       onMouseEnter={() => { if (!isTouch) setIsHovered(true); }}
       onMouseLeave={() => { if (!isTouch) setIsHovered(false); }}
       onClick={onTap}
@@ -27,7 +26,7 @@ export function FurnitureCard({ imageUrl, title, category, aspectRatio, isActive
       <motion.img
         src={imageUrl}
         alt={title}
-        className="w-full h-full object-cover"
+        style={{ width: "100%", height: "auto", display: "block" }}
         animate={{ scale: showPanel ? 1.02 : 1 }}
         transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       />

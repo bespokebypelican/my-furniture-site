@@ -130,7 +130,6 @@ export function CollageLayout() {
               imageUrl={item.imageUrl}
               title={item.title}
               category={item.category}
-              aspectRatio={item.aspectRatio}
               isActive={activeIndex === index}
               onTap={() => setActiveIndex(activeIndex === index ? null : index)}
             />

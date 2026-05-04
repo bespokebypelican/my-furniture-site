@@ -1,122 +1,145 @@
 "use client"
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { FurnitureCard } from "./FurnitureCard";
 import { supabase } from "../../../lib/supabase";
-
-export const collageItems = [
-  { id: 1, imageUrl: "https://images.unsplash.com/photo-1687180497278-ca4d736ecc99?w=1080&q=80", title: "Modern Living Space", category: "Living Room", aspectRatio: "3/2" },
-  { id: 2, imageUrl: "https://images.unsplash.com/photo-1687180498602-5a1046defaa4?w=1080&q=80", title: "Contemporary Interior", category: "Living Room", aspectRatio: "1/1" },
-  { id: 3, imageUrl: "https://images.unsplash.com/photo-1687180497716-5872969e5125?w=1080&q=80", title: "Minimal Elegance", category: "Living Room", aspectRatio: "5/3" },
-  { id: 4, imageUrl: "https://images.unsplash.com/photo-1704383014609-747c5afc2bc1?w=1080&q=80", title: "Dining Experience", category: "Dining Room", aspectRatio: "4/3" },
-  { id: 5, imageUrl: "https://images.unsplash.com/photo-1661099548731-fc8f74fc9dd9?w=1080&q=80", title: "Luxe Comfort", category: "Bedroom", aspectRatio: "9/8" },
-  { id: 6, imageUrl: "https://images.unsplash.com/photo-1775975789595-eff6a10aad95?w=1080&q=80", title: "Modern Sophistication", category: "Living Room", aspectRatio: "7/5" },
-  { id: 7, imageUrl: "https://images.unsplash.com/photo-1661099548796-c7d5f67cfe36?w=1080&q=80", title: "Artisan Details", category: "Accessories", aspectRatio: "5/4" },
-  { id: 8, imageUrl: "https://images.unsplash.com/photo-1680503146454-0fe569cef4eb?w=1080&q=80", title: "Refined Living", category: "Living Room", aspectRatio: "3/2" },
-  { id: 9, imageUrl: "https://images.unsplash.com/photo-1760072513442-9872656c1b07?w=1080&q=80", title: "Contemporary Design", category: "Living Room", aspectRatio: "4/3" },
-  { id: 10, imageUrl: "https://images.unsplash.com/photo-1661099549317-aa4e4ce33f16?w=1080&q=80", title: "Vintage Charm", category: "Accessories", aspectRatio: "2/1" },
-];
-
-type CollageItem = typeof collageItems[number];
+import { Search, ChevronDown } from "lucide-react";
 
 type SupabasePhoto = {
   id: number;
   image_url: string;
   title?: string;
   category?: string;
+  style?: string;
+  tone?: string;
   aspect_ratio?: string;
 };
 
-export function CollageLayout({ items = collageItems }: { items?: CollageItem[] }) {
+type CollageItem = {
+  id: number;
+  imageUrl: string;
+  title: string;
+  category: string;
+  aspectRatio: string;
+};
+
+export function CollageLayout() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [category, setCategory] = useState("");
+  const [style, setStyle] = useState("");
+  const [tone, setTone] = useState("");
+  const [photos, setPhotos] = useState<CollageItem[]>([]);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [sourceItems, setSourceItems] = useState<CollageItem[]>(items);
-  const gridRef = useRef<HTMLDivElement>(null);
-  const lastItemRef = useRef<HTMLDivElement>(null);
-  const isScrollingBack = useRef(false);
 
   useEffect(() => {
-    async function fetchPhotos() {
-      console.log("[Supabase] Fetching inspiration_photos...");
-      const { data, error } = await supabase.from("inspiration_photos").select("*");
-      console.log("[Supabase] data:", data);
-      console.log("[Supabase] error:", error);
+    const timer = setTimeout(async () => {
+      let query = supabase.from("inspiration_photos").select("*");
+      if (searchQuery) query = query.ilike("title", `%${searchQuery}%`);
+      if (category) query = query.eq("category", category);
+      if (style) query = query.eq("style", style);
+      if (tone) query = query.eq("tone", tone);
+
+      const { data, error } = await query;
       if (error) {
         console.error("[Supabase] Fetch failed:", error.message);
         return;
       }
-      if (!data || data.length === 0) {
-        console.warn("[Supabase] Table is empty or returned no rows — using hardcoded fallback");
-        return;
-      }
-      const mapped: CollageItem[] = (data as SupabasePhoto[]).map((row) => ({
-        id: row.id,
-        imageUrl: row.image_url,
-        title: row.title ?? "",
-        category: row.category ?? "",
-        aspectRatio: row.aspect_ratio ?? "4/3",
-      }));
-      console.log("[Supabase] Mapped items:", mapped);
-      setSourceItems(mapped);
-    }
-    fetchPhotos();
-  }, []);
-
-  const displayItems = [...sourceItems, ...sourceItems];
-
-  const handleTap = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
-  useEffect(() => {
-    const lastItem = lastItemRef.current;
-    const grid = gridRef.current;
-    if (!lastItem || !grid) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !isScrollingBack.current) {
-          isScrollingBack.current = true;
-          window.scrollTo({ top: grid.offsetTop, behavior: "smooth" });
-          setTimeout(() => {
-            isScrollingBack.current = false;
-          }, 1500);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(lastItem);
-    return () => observer.disconnect();
-  }, [displayItems.length]);
+      setPhotos(
+        (data ?? []).map((row: SupabasePhoto) => ({
+          id: row.id,
+          imageUrl: row.image_url,
+          title: row.title ?? "",
+          category: row.category ?? "",
+          aspectRatio: row.aspect_ratio ?? "4/3",
+        }))
+      );
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchQuery, category, style, tone]);
 
   return (
-    <div
-      ref={gridRef}
-      style={{ columns: "3", columnGap: "8px", width: "100%" }}
-      className="masonry-grid"
-    >
-      {displayItems.map((item, index) => (
-        <div
-          key={`${item.id}-${index}`}
-          ref={index === displayItems.length - 1 ? lastItemRef : undefined}
-          style={{ breakInside: "avoid", marginBottom: "8px" }}
-        >
-          <FurnitureCard
-            imageUrl={item.imageUrl}
-            title={item.title}
-            category={item.category}
-            aspectRatio={item.aspectRatio}
-            isActive={activeIndex === index}
-            onTap={() => handleTap(index)}
-          />
+    <div>
+      {/* Filter Bar */}
+      <div style={{ backgroundColor: "white", borderTop: "1px solid #e0e0e0", borderBottom: "1px solid #e0e0e0", padding: "20px 16px", marginBottom: "40px" }}>
+        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "12px" }}>
+          <div style={{ flex: "1 1 200px", position: "relative" }}>
+            <Search style={{ position: "absolute", left: "12px", top: "50%", transform: "translateY(-50%)", color: "#999" }} size={18} />
+            <input
+              type="text"
+              placeholder="Search furniture..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              style={{ width: "100%", border: "1px solid #e0e0e0", fontSize: "14px", paddingLeft: "44px", paddingRight: "16px", paddingTop: "10px", paddingBottom: "10px", outline: "none", color: "#2a2a2a", backgroundColor: "white" }}
+            />
+          </div>
+          <div style={{ position: "relative", flex: "1 1 110px" }}>
+            <select
+              className="insp-select"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              style={{ width: "100%", appearance: "none", border: "1px solid #e0e0e0", fontSize: "14px", padding: "10px 32px 10px 12px", outline: "none", cursor: "pointer", color: "#000" }}
+            >
+              <option value="">Category</option>
+              <option value="Living Room">Living Room</option>
+              <option value="Dining Room">Dining Room</option>
+              <option value="Bedroom">Bedroom</option>
+            </select>
+            <ChevronDown style={{ position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)", color: "#999", pointerEvents: "none" }} size={16} />
+          </div>
+          <div style={{ position: "relative", flex: "1 1 110px" }}>
+            <select
+              className="insp-select"
+              value={style}
+              onChange={(e) => setStyle(e.target.value)}
+              style={{ width: "100%", appearance: "none", border: "1px solid #e0e0e0", fontSize: "14px", padding: "10px 32px 10px 12px", outline: "none", cursor: "pointer", color: "#000" }}
+            >
+              <option value="">Style</option>
+              <option value="Modern">Modern</option>
+              <option value="Minimal">Minimal</option>
+              <option value="Classic">Classic</option>
+            </select>
+            <ChevronDown style={{ position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)", color: "#999", pointerEvents: "none" }} size={16} />
+          </div>
+          <div style={{ position: "relative", flex: "1 1 110px" }}>
+            <select
+              className="insp-select"
+              value={tone}
+              onChange={(e) => setTone(e.target.value)}
+              style={{ width: "100%", appearance: "none", border: "1px solid #e0e0e0", fontSize: "14px", padding: "10px 32px 10px 12px", outline: "none", cursor: "pointer", color: "#000" }}
+            >
+              <option value="">Tone</option>
+              <option value="Neutral">Neutral</option>
+              <option value="Warm">Warm</option>
+              <option value="Cool">Cool</option>
+            </select>
+            <ChevronDown style={{ position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)", color: "#999", pointerEvents: "none" }} size={16} />
+          </div>
         </div>
-      ))}
+        <style>{`
+          .insp-select { color: #000; background-color: white; }
+          .insp-select option { color: #000; background-color: white; }
+          .insp-select option:hover { background-color: #F2C641 !important; color: #000 !important; }
+          .insp-select option:checked { background-color: white !important; color: #000 !important; }
+        `}</style>
+      </div>
+
+      {/* Masonry Grid */}
+      <div style={{ columns: "3", columnGap: "8px", width: "100%" }} className="masonry-grid">
+        {photos.map((item, index) => (
+          <div key={item.id} style={{ breakInside: "avoid", marginBottom: "8px" }}>
+            <FurnitureCard
+              imageUrl={item.imageUrl}
+              title={item.title}
+              category={item.category}
+              aspectRatio={item.aspectRatio}
+              isActive={activeIndex === index}
+              onTap={() => setActiveIndex(activeIndex === index ? null : index)}
+            />
+          </div>
+        ))}
+      </div>
       <style>{`
-        @media (max-width: 768px) {
-          .masonry-grid { columns: 2 !important; }
-        }
-        @media (max-width: 480px) {
-          .masonry-grid { columns: 2 !important; }
-        }
+        @media (max-width: 768px) { .masonry-grid { columns: 2 !important; } }
+        @media (max-width: 480px) { .masonry-grid { columns: 2 !important; } }
       `}</style>
     </div>
   );

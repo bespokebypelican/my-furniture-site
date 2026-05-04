@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Premium custom furniture solutions designed to your requirement.",
   },
   icons: {
-    icon: '/favicon.ico?v=3',
+    icon: '/bird-favicon.png',
   },
 };
 

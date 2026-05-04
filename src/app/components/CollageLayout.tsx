@@ -45,7 +45,6 @@ export function CollageLayout() {
       }
       setPhotos(
         (data ?? []).map((row: SupabasePhoto) => {
-          console.log(row);
           return {
             id: row.id,
             imageUrl: row.image_url ?? (row as any).Image_url ?? "",

@@ -35,8 +35,18 @@ export function CollageLayout({ items = collageItems }: { items?: CollageItem[] 
 
   useEffect(() => {
     async function fetchPhotos() {
+      console.log("[Supabase] Fetching inspiration_photos...");
       const { data, error } = await supabase.from("inspiration_photos").select("*");
-      if (error || !data || data.length === 0) return;
+      console.log("[Supabase] data:", data);
+      console.log("[Supabase] error:", error);
+      if (error) {
+        console.error("[Supabase] Fetch failed:", error.message);
+        return;
+      }
+      if (!data || data.length === 0) {
+        console.warn("[Supabase] Table is empty or returned no rows — using hardcoded fallback");
+        return;
+      }
       const mapped: CollageItem[] = (data as SupabasePhoto[]).map((row) => ({
         id: row.id,
         imageUrl: row.image_url,
@@ -44,6 +54,7 @@ export function CollageLayout({ items = collageItems }: { items?: CollageItem[] 
         category: row.category ?? "",
         aspectRatio: row.aspect_ratio ?? "4/3",
       }));
+      console.log("[Supabase] Mapped items:", mapped);
       setSourceItems(mapped);
     }
     fetchPhotos();

@@ -89,7 +89,7 @@ export default function Page() {
               </div>
               <div style={{ position: "relative", flex: "1 1 110px" }}>
                 <select className="insp-select" style={{ width: "100%", appearance: "none", border: "1px solid #e0e0e0", fontSize: "14px", padding: "10px 32px 10px 12px", outline: "none", cursor: "pointer", color: "#000" }}>
-                  <option>Color</option>
+                  <option>Tone</option>
                   <option>Neutral</option>
                   <option>Warm</option>
                   <option>Cool</option>

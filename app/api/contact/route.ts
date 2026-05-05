@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   try {
     // Notification email to the business
     await resend.emails.send({
-      from: 'Bespoke By Pelican <onboarding@resend.dev>',
+      from: 'Bespoke By Pelican <noreply@bespokebypelican.com>',
       to: 'bespokebypelican@gmail.com',
       subject: 'New Contact Form Submission',
       html: `
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
     // Auto-reply to the user if they provided an email
     if (email) {
       await resend.emails.send({
-        from: 'Bespoke By Pelican <onboarding@resend.dev>',
+        from: 'Bespoke By Pelican <noreply@bespokebypelican.com>',
         to: email,
         subject: 'We received your message — Bespoke By Pelican',
         html: `

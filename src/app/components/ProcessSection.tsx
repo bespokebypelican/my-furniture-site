@@ -25,7 +25,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="w-full bg-[#f5f5f3] py-24 px-8">
+    <section className="w-full px-8" style={{ backgroundColor: '#EDE9E0', padding: '64px 32px' }}>
       <div className="max-w-[1200px] mx-auto">
         <h2
           className="text-center text-5xl mb-4 tracking-tight"
@@ -33,7 +33,7 @@ export default function ProcessSection() {
         >
           Our Process
         </h2>
-        <p className="text-center text-[#4a4a4a] mb-16 max-w-[600px] mx-auto">
+        <p className="text-center mb-16 max-w-[600px] mx-auto" style={{ color: '#6B6560' }}>
           From concept to creation, every step is guided by our commitment to excellence
         </p>
 

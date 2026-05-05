@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -41,7 +40,7 @@ export default function ClientCarousel() {
   };
 
   return (
-    <section className="w-full bg-white py-24 px-8">
+    <section className="w-full px-8" style={{ backgroundColor: '#F7F4EE', padding: '64px 32px' }}>
       <div className="max-w-[900px] mx-auto">
         <h2
           className="text-center text-5xl mb-16 tracking-tight"

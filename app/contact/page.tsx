@@ -39,7 +39,7 @@ export default function Page() {
       <AnnouncementBar />
       <Navigation />
 
-      <div className="min-h-screen bg-[#faf9f7]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+      <div className="min-h-screen" style={{ backgroundColor: '#F7F4EE', fontFamily: "'Montserrat', sans-serif" }}>
 
         {/* Compact Banner */}
         <section
@@ -77,39 +77,22 @@ export default function Page() {
               {/* Addresses */}
               <div className="space-y-9">
                 <div className="space-y-1.5">
-                  <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>
-                    #201/A, First Floor
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Kudlu Main Rd, Hosapalaya
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Muneshwara Nagar
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Bengaluru, Karnataka 560068
-                  </p>
+                  <p style={{ fontSize: '15px', color: '#1A1A1A', fontWeight: 400, lineHeight: 1.6 }}>#201/A, First Floor</p>
+                  <p style={{ fontSize: '14px', color: '#6B6560', fontWeight: 300, lineHeight: 1.6 }}>Kudlu Main Rd, Hosapalaya</p>
+                  <p style={{ fontSize: '14px', color: '#6B6560', fontWeight: 300, lineHeight: 1.6 }}>Muneshwara Nagar</p>
+                  <p style={{ fontSize: '14px', color: '#6B6560', fontWeight: 300, lineHeight: 1.6 }}>Bengaluru, Karnataka 560068</p>
                 </div>
-
                 <div className="space-y-1.5">
-                  <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>
-                    C.K. Plaza, 3rd Floor
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Gangappa Block, No.30
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    New PDI, Bellary Rd, Gangenahalli
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Bengaluru, Karnataka 560006
-                  </p>
+                  <p style={{ fontSize: '15px', color: '#1A1A1A', fontWeight: 400, lineHeight: 1.6 }}>C.K. Plaza, 3rd Floor</p>
+                  <p style={{ fontSize: '14px', color: '#6B6560', fontWeight: 300, lineHeight: 1.6 }}>Gangappa Block, No.30</p>
+                  <p style={{ fontSize: '14px', color: '#6B6560', fontWeight: 300, lineHeight: 1.6 }}>New PDI, Bellary Rd, Gangenahalli</p>
+                  <p style={{ fontSize: '14px', color: '#6B6560', fontWeight: 300, lineHeight: 1.6 }}>Bengaluru, Karnataka 560006</p>
                 </div>
               </div>
 
               {/* Support Text */}
               <div>
-                <p className="text-[14px] text-[#4a4a4a]" style={{ fontWeight: 300, lineHeight: 1.8 }}>
+                <p style={{ fontSize: '14px', color: '#6B6560', fontWeight: 300, lineHeight: 1.8 }}>
                   Have any doubts, comments, or just like to say Hi,<br />
                   we are here for you — and we are wearing our thinking caps.
                 </p>
@@ -117,152 +100,134 @@ export default function Page() {
 
               {/* Contact Details Block */}
               <div className="space-y-8 pt-4">
-
-                {/* Phone */}
                 <div className="space-y-2">
-                  <p className="text-[10px] tracking-[0.15em] uppercase text-[#8a8a8a]" style={{ fontWeight: 400 }}>
-                    CALL US
-                  </p>
+                  <p style={{ fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#6B6560', fontWeight: 400 }}>CALL US</p>
                   <a
                     href="tel:18008330046"
-                    className="block text-[19px] text-[#1a1a1a] transition-all"
-                    style={{ fontWeight: 400, textDecoration: 'none' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.textDecoration = 'underline';
-                      e.currentTarget.style.textUnderlineOffset = '3px';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.textDecoration = 'none';
-                    }}
+                    style={{ display: 'block', fontSize: '19px', color: '#1A1A1A', fontWeight: 400, textDecoration: 'none' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = '#C9A96E'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = '#1A1A1A'; }}
                   >
                     1800 833 0046
                   </a>
-                  <p className="text-[12px] text-[#6a6a6a]" style={{ fontWeight: 300 }}>
-                    (Mon–Sun, 9 am – 8 pm)
-                  </p>
+                  <p style={{ fontSize: '12px', color: '#6B6560', fontWeight: 300 }}>(Mon–Sun, 9 am – 8 pm)</p>
                 </div>
-
-                {/* Email */}
                 <div className="space-y-2">
-                  <p className="text-[10px] tracking-[0.15em] uppercase text-[#8a8a8a]" style={{ fontWeight: 400 }}>
-                    EMAIL US
-                  </p>
+                  <p style={{ fontSize: '10px', letterSpacing: '0.15em', textTransform: 'uppercase', color: '#6B6560', fontWeight: 400 }}>EMAIL US</p>
                   <a
                     href="mailto:bespokebypelica@gmail.com"
-                    className="block text-[14px] text-[#1a1a1a] transition-all"
-                    style={{ fontWeight: 300, textDecoration: 'none' }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.textDecoration = 'underline';
-                      e.currentTarget.style.textUnderlineOffset = '3px';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.textDecoration = 'none';
-                    }}
+                    style={{ display: 'block', fontSize: '14px', color: '#1A1A1A', fontWeight: 300, textDecoration: 'none' }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = '#C9A96E'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = '#1A1A1A'; }}
                   >
                     bespokebypelica@gmail.com
                   </a>
                 </div>
-
               </div>
-
             </div>
 
             {/* Right Side - Form */}
             <div>
-              <div
-                className="p-7 md:p-8 bg-white/60 border border-[#e8e6e1]"
-                style={{
-                  backdropFilter: 'blur(12px)',
-                  boxShadow: '0 2px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.01)',
-                  borderRadius: 0
-                }}
-              >
-                <form onSubmit={handleSubmit} className="space-y-5">
-
-                  <div>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                {(['name:text:Name (optional)', 'phone:tel:Phone Number *', 'email:email:Email (optional)'] as const).map((field) => {
+                  const [name, type, placeholder] = field.split(':');
+                  return (
                     <input
-                      type="text"
-                      name="name"
-                      placeholder="Name (optional)"
-                      value={formData.name}
+                      key={name}
+                      type={type}
+                      name={name}
+                      placeholder={placeholder}
+                      value={formData[name as keyof typeof formData]}
                       onChange={handleChange}
-                      className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
-                      style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.015)' }}
+                      required={name === 'phone'}
+                      style={{
+                        display: 'block',
+                        width: '100%',
+                        padding: '10px 0',
+                        background: 'transparent',
+                        border: 'none',
+                        borderBottom: '1px solid #C2BDB8',
+                        fontSize: '14px',
+                        color: '#1A1A1A',
+                        outline: 'none',
+                        borderRadius: 0,
+                        fontFamily: "'Montserrat', sans-serif",
+                        fontWeight: 300,
+                        transition: 'border-color 0.3s ease',
+                      }}
+                      onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#C9A96E'; }}
+                      onBlur={(e) => { e.currentTarget.style.borderBottomColor = '#C2BDB8'; }}
                     />
-                  </div>
+                  );
+                })}
+                <textarea
+                  name="message"
+                  placeholder="Message *"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    padding: '10px 0',
+                    background: 'transparent',
+                    border: 'none',
+                    borderBottom: '1px solid #C2BDB8',
+                    fontSize: '14px',
+                    color: '#1A1A1A',
+                    outline: 'none',
+                    borderRadius: 0,
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 300,
+                    resize: 'none',
+                    transition: 'border-color 0.3s ease',
+                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#C9A96E'; }}
+                  onBlur={(e) => { e.currentTarget.style.borderBottomColor = '#C2BDB8'; }}
+                />
 
-                  <div>
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number *"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
-                      style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.015)' }}
-                    />
-                  </div>
+                {status === 'success' && (
+                  <p style={{ fontSize: '13px', color: '#2e7d32', textAlign: 'center', fontFamily: "'Montserrat', sans-serif" }}>
+                    Message sent! We'll be in touch soon.
+                  </p>
+                )}
+                {status === 'error' && (
+                  <p style={{ fontSize: '13px', color: '#c62828', textAlign: 'center', fontFamily: "'Montserrat', sans-serif" }}>{errorMsg}</p>
+                )}
 
-                  <div>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email (optional)"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
-                      style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.015)' }}
-                    />
-                  </div>
-
-                  <div>
-                    <textarea
-                      name="message"
-                      placeholder="Message *"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={4}
-                      className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all resize-none"
-                      style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.015)' }}
-                    />
-                  </div>
-
-                  {status === 'success' && (
-                    <p className="text-[13px] text-green-700 text-center">
-                      Message sent! We'll be in touch soon.
-                    </p>
-                  )}
-                  {status === 'error' && (
-                    <p className="text-[13px] text-red-600 text-center">{errorMsg}</p>
-                  )}
-
-                  <button
-                    type="submit"
-                    disabled={status === 'submitting'}
-                    className="w-full bg-[#1a1a1a] text-white py-3.5 text-[13px] tracking-[0.12em] uppercase transition-all hover:bg-[#2a2a2a] disabled:opacity-60 disabled:cursor-not-allowed"
-                    style={{
-                      borderRadius: 0,
-                      fontWeight: 400,
-                      boxShadow: '0 1px 4px rgba(0, 0, 0, 0.06)',
-                      transform: 'translateY(0)',
-                      transition: 'all 0.3s ease'
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-1px)';
-                      e.currentTarget.style.boxShadow = '0 2px 8px rgba(0, 0, 0, 0.1)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.06)';
-                    }}
-                  >
-                    {status === 'submitting' ? 'Sending…' : 'Send Message'}
-                  </button>
-
-                </form>
-              </div>
+                <button
+                  type="submit"
+                  disabled={status === 'submitting'}
+                  style={{
+                    width: '100%',
+                    backgroundColor: '#1A1A1A',
+                    color: '#C9A96E',
+                    border: 'none',
+                    borderRadius: 0,
+                    padding: '14px 28px',
+                    fontSize: '11px',
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    fontFamily: "'Montserrat', sans-serif",
+                    cursor: status === 'submitting' ? 'not-allowed' : 'pointer',
+                    opacity: status === 'submitting' ? 0.6 : 1,
+                    transition: 'all 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    if (status !== 'submitting') {
+                      e.currentTarget.style.backgroundColor = '#C9A96E';
+                      e.currentTarget.style.color = '#1A1A1A';
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1A1A1A';
+                    e.currentTarget.style.color = '#C9A96E';
+                  }}
+                >
+                  {status === 'submitting' ? 'Sending…' : 'Send Message'}
+                </button>
+              </form>
             </div>
 
           </div>
@@ -299,8 +264,8 @@ export default function Page() {
                   background: 'none',
                   border: 'none',
                   cursor: 'pointer',
-                  borderBottom: activeTab === tab ? '2px solid #1a1a1a' : '2px solid transparent',
-                  color: activeTab === tab ? '#1a1a1a' : '#8a8a8a',
+                  borderBottom: activeTab === tab ? '2px solid #C9A96E' : '2px solid transparent',
+                  color: activeTab === tab ? '#1A1A1A' : '#6B6560',
                   marginBottom: '-1px',
                   transition: 'color 0.2s ease',
                 }}

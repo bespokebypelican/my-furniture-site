@@ -104,7 +104,7 @@ export default function App() {
     ]
   };
   return (
-    <div className="w-full min-h-screen" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+    <div className="w-full min-h-screen" style={{ backgroundColor: '#F7F4EE', fontFamily: "'Montserrat', sans-serif" }}>
       <AnnouncementBar />
       <Navigation />
       <HeroSection />
@@ -114,9 +114,9 @@ export default function App() {
       {/* Process Section - Cinematic Editorial Design */}
       <div className="w-full" style={{ fontFamily: "'Montserrat', sans-serif" }}>
         {/* Top Intro Text */}
-        <section className="w-full px-4 md:px-8 pt-[40px] md:pt-[48px] lg:pt-[64px] pb-[32px] md:pb-[40px] lg:pb-[56px] bg-gradient-to-b from-[#f5f5f3] to-[#fafafa]">
+        <section className="w-full px-4 md:px-8" style={{ backgroundColor: '#F7F4EE', padding: '64px 32px' }}>
           <div className="max-w-[800px] mx-auto flex flex-col items-center text-center">
-            <p className="text-[#3a3a3a] text-[16px] md:text-[17px] lg:text-[18px] leading-[1.9] md:leading-[2] tracking-[0.01em] font-light">
+            <p style={{ color: '#6B6560', fontSize: '17px', lineHeight: 2, letterSpacing: '0.01em', fontWeight: 300 }}>
               We believe every project presents an opportunity for exploration and innovation
               We are committed to enhance your spaces with function & aesthetics, executing with highest level of conduct and a culmination that exceeds expectations.
             </p>
@@ -342,7 +342,7 @@ export default function App() {
       </div>
 
       {/* Client Logos Carousel Section */}
-      <section className="w-full py-[40px] md:py-[48px] lg:py-[64px] px-4 md:px-8 bg-gradient-to-b from-[#fafafa] to-[#f5f5f5]">
+      <section className="w-full px-4 md:px-8" style={{ backgroundColor: '#F7F4EE', padding: '64px 32px' }}>
         <div className="max-w-[1200px] mx-auto flex flex-col items-center">
           <h2 className="text-center text-[32px] md:text-[42px] lg:text-[48px] mb-[32px] md:mb-[40px] lg:mb-[48px] text-[#2a2a2a] tracking-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
             Our Esteemed Clientele
@@ -366,74 +366,105 @@ export default function App() {
       </section>
 
       {/* Contact Form Section */}
-      <section id="contact" className="w-full py-[40px] md:py-[48px] lg:py-[64px] px-4 md:px-8 bg-[#f5f5f5]">
+      <section id="contact" className="w-full px-4 md:px-8" style={{ backgroundColor: '#EDE9E0', padding: '64px 32px' }}>
         <div className="max-w-[1000px] mx-auto flex flex-col items-center">
           <h2 className="text-center text-[32px] md:text-[42px] lg:text-[48px] mb-[32px] md:mb-[40px] lg:mb-[48px] text-[#2a2a2a] tracking-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
             Contact
           </h2>
-          <div className="w-full max-w-[800px] p-7 md:p-8 bg-white/60 border border-[#e8e6e1]"
-            style={{ backdropFilter: 'blur(12px)', boxShadow: '0 2px 12px rgba(0,0,0,0.02), 0 1px 2px rgba(0,0,0,0.01)', borderRadius: 0 }}
-          >
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
+          <div className="w-full max-w-[800px]">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {[
+                { type: 'text', name: 'name', placeholder: 'Name (optional)', required: false },
+                { type: 'tel', name: 'phone', placeholder: 'Phone Number *', required: true },
+                { type: 'email', name: 'email', placeholder: 'Email (optional)', required: false },
+              ].map(({ type, name, placeholder, required }) => (
                 <input
-                  type="text"
-                  name="name"
-                  placeholder="Name (optional)"
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
-                  style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.015)' }}
+                  key={name}
+                  type={type}
+                  name={name}
+                  placeholder={placeholder}
+                  value={formData[name as keyof typeof formData]}
+                  onChange={(e) => setFormData({ ...formData, [name]: e.target.value })}
+                  required={required}
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    padding: '10px 0',
+                    background: 'transparent',
+                    border: 'none',
+                    borderBottom: '1px solid #C2BDB8',
+                    fontSize: '14px',
+                    color: '#1A1A1A',
+                    outline: 'none',
+                    borderRadius: 0,
+                    fontFamily: "'Montserrat', sans-serif",
+                    fontWeight: 300,
+                    transition: 'border-color 0.3s ease',
+                  }}
+                  onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#C9A96E'; }}
+                  onBlur={(e) => { e.currentTarget.style.borderBottomColor = '#C2BDB8'; }}
                 />
-              </div>
-              <div>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="Phone Number *"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  required
-                  className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
-                  style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.015)' }}
-                />
-              </div>
-              <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email (optional)"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
-                  style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.015)' }}
-                />
-              </div>
-              <div>
-                <textarea
-                  name="message"
-                  placeholder="Message *"
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  required
-                  rows={4}
-                  className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all resize-none"
-                  style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.015)' }}
-                />
-              </div>
+              ))}
+              <textarea
+                name="message"
+                placeholder="Message *"
+                value={formData.message}
+                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                required
+                rows={4}
+                style={{
+                  display: 'block',
+                  width: '100%',
+                  padding: '10px 0',
+                  background: 'transparent',
+                  border: 'none',
+                  borderBottom: '1px solid #C2BDB8',
+                  fontSize: '14px',
+                  color: '#1A1A1A',
+                  outline: 'none',
+                  borderRadius: 0,
+                  fontFamily: "'Montserrat', sans-serif",
+                  fontWeight: 300,
+                  resize: 'none',
+                  transition: 'border-color 0.3s ease',
+                }}
+                onFocus={(e) => { e.currentTarget.style.borderBottomColor = '#C9A96E'; }}
+                onBlur={(e) => { e.currentTarget.style.borderBottomColor = '#C2BDB8'; }}
+              />
               {formStatus === 'success' && (
-                <p className="text-[13px] text-green-700 text-center">Message sent! We'll be in touch soon.</p>
+                <p style={{ fontSize: '13px', color: '#2e7d32', textAlign: 'center', fontFamily: "'Montserrat', sans-serif" }}>Message sent! We'll be in touch soon.</p>
               )}
               {formStatus === 'error' && (
-                <p className="text-[13px] text-red-600 text-center">{formError}</p>
+                <p style={{ fontSize: '13px', color: '#c62828', textAlign: 'center', fontFamily: "'Montserrat', sans-serif" }}>{formError}</p>
               )}
               <button
                 type="submit"
                 disabled={formStatus === 'submitting'}
-                className="w-full bg-[#1a1a1a] text-white py-3.5 text-[13px] tracking-[0.12em] uppercase transition-all hover:bg-[#2a2a2a] disabled:opacity-60 disabled:cursor-not-allowed"
-                style={{ borderRadius: 0, fontWeight: 400, boxShadow: '0 1px 4px rgba(0,0,0,0.06)', transform: 'translateY(0)', transition: 'all 0.3s ease' }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 1px 4px rgba(0,0,0,0.06)'; }}
+                style={{
+                  width: '100%',
+                  backgroundColor: '#1A1A1A',
+                  color: '#C9A96E',
+                  border: 'none',
+                  borderRadius: 0,
+                  padding: '14px 28px',
+                  fontSize: '11px',
+                  letterSpacing: '0.18em',
+                  textTransform: 'uppercase',
+                  fontFamily: "'Montserrat', sans-serif",
+                  cursor: formStatus === 'submitting' ? 'not-allowed' : 'pointer',
+                  opacity: formStatus === 'submitting' ? 0.6 : 1,
+                  transition: 'all 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  if (formStatus !== 'submitting') {
+                    e.currentTarget.style.backgroundColor = '#C9A96E';
+                    e.currentTarget.style.color = '#1A1A1A';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#1A1A1A';
+                  e.currentTarget.style.color = '#C9A96E';
+                }}
               >
                 {formStatus === 'submitting' ? 'Sending…' : 'Send Message'}
               </button>

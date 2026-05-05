@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display_SC, Montserrat } from "next/font/google";
 import Script from "next/script";
 import FloatingButtons from "../src/app/components/FloatingButtons";
+import ScrollReveal from "../src/app/components/ScrollReveal";
 import "./globals.css";
 
 const playfairSC = Playfair_Display_SC({
@@ -60,6 +61,7 @@ export default function RootLayout({
             gtag('config', 'G-ZX2LGDNF1X');
           `}
         </Script>
+        <ScrollReveal />
         {children}
         <FloatingButtons />
       </body>

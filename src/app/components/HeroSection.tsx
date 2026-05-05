@@ -14,7 +14,7 @@ export default function HeroSection() {
 
         <div className="text-center w-full max-w-[780px] flex flex-col gap-[32px] md:gap-[40px] px-4">
           <h1
-            className="text-[40px] md:text-[56px] lg:text-[68px] tracking-tight leading-[1.15] text-[#1a1a1a]"
+            className="text-[32px] md:text-[44px] lg:text-[54px] tracking-tight leading-[1.15] text-[#1a1a1a]"
             style={{ fontFamily: "'Playfair Display SC', serif" }}
           >
             At Bespoke by Pelican,

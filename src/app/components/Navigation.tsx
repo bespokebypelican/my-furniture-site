@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 const logoImage = '/Untitled_design_(5).png';
 
 export default function Navigation() {
@@ -16,28 +16,17 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const linkClass = (href: string) => {
-    const isActive = pathname === href;
-    return {
-      style: {
-        fontFamily: "'Montserrat', sans-serif",
-        fontSize: '11px',
-        letterSpacing: '0.18em',
-        textTransform: 'uppercase' as const,
-        color: '#1A1A1A',
-        textDecoration: 'none',
-        paddingBottom: '4px',
-        borderBottom: isActive ? '1px solid #C9A96E' : '1px solid transparent',
-        transition: 'border-color 0.3s ease',
-      } as React.CSSProperties,
-      onMouseEnter: (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (!isActive) e.currentTarget.style.borderBottomColor = '#C9A96E';
-      },
-      onMouseLeave: (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (!isActive) e.currentTarget.style.borderBottomColor = 'transparent';
-      },
-    };
-  };
+  const linkStyle = (href: string): React.CSSProperties => ({
+    fontFamily: "'Montserrat', sans-serif",
+    fontSize: '11px',
+    letterSpacing: '0.18em',
+    textTransform: 'uppercase',
+    color: '#1A1A1A',
+    textDecoration: 'none',
+    paddingBottom: '4px',
+    borderBottom: pathname === href ? '1px solid #C9A96E' : '1px solid transparent',
+    transition: 'border-color 0.3s ease',
+  });
 
   return (
     <nav
@@ -60,22 +49,23 @@ export default function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
-          <Link href="/" {...linkClass('/')}>Home</Link>
-          <Link href="/inspiration" {...linkClass('/inspiration')}>Inspiration</Link>
-          <Link href="/contact" {...linkClass('/contact')}>Contact Us</Link>
-          <button
-            className="transition-all duration-300 hover:opacity-60"
-            style={{ color: '#1A1A1A' }}
-            aria-label="Search"
-          >
-            <Search size={17} strokeWidth={2} />
-          </button>
+          {[['/', 'Home'], ['/inspiration', 'Inspiration'], ['/contact', 'Contact Us']].map(([href, label]) => (
+            <Link
+              key={href}
+              href={href}
+              style={linkStyle(href)}
+              onMouseEnter={(e) => { if (pathname !== href) e.currentTarget.style.borderBottomColor = '#C9A96E'; }}
+              onMouseLeave={(e) => { if (pathname !== href) e.currentTarget.style.borderBottomColor = 'transparent'; }}
+            >
+              {label}
+            </Link>
+          ))}
         </div>
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden transition-all duration-300"
-          style={{ color: '#1A1A1A' }}
+          className="md:hidden"
+          style={{ color: '#1A1A1A', background: 'none', border: 'none', cursor: 'pointer' }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -91,16 +81,7 @@ export default function Navigation() {
               <Link
                 key={href}
                 href={href}
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontSize: '11px',
-                  letterSpacing: '0.18em',
-                  textTransform: 'uppercase',
-                  color: '#1A1A1A',
-                  textDecoration: 'none',
-                  paddingBottom: '4px',
-                  borderBottom: pathname === href ? '1px solid #C9A96E' : '1px solid transparent',
-                }}
+                style={linkStyle(href)}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {label}

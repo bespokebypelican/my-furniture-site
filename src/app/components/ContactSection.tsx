@@ -1,6 +1,36 @@
+"use client"
+import { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    setErrorMsg('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Something went wrong.');
+      setStatus('success');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (err: any) {
+      setStatus('error');
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    }
+  };
+
   return (
     <section className="w-full bg-[#f5f5f3] py-24 px-8">
       <div className="max-w-[1000px] mx-auto">
@@ -52,11 +82,14 @@ export default function ContactSection() {
           </div>
 
           <div>
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <input
                   type="text"
-                  placeholder="Your Name"
+                  name="name"
+                  placeholder="Your Name (optional)"
+                  value={formData.name}
+                  onChange={handleChange}
                   className="w-full bg-white border border-[#d0d0d0] rounded-lg px-4 py-6 focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
@@ -64,7 +97,10 @@ export default function ContactSection() {
               <div>
                 <input
                   type="email"
-                  placeholder="Email Address"
+                  name="email"
+                  placeholder="Email Address (optional)"
+                  value={formData.email}
+                  onChange={handleChange}
                   className="w-full bg-white border border-[#d0d0d0] rounded-lg px-4 py-6 focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
@@ -72,24 +108,40 @@ export default function ContactSection() {
               <div>
                 <input
                   type="tel"
-                  placeholder="Phone Number"
+                  name="phone"
+                  placeholder="Phone Number *"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-white border border-[#d0d0d0] rounded-lg px-4 py-6 focus:outline-none focus:ring-2 focus:ring-black"
                 />
               </div>
 
               <div>
                 <textarea
-                  placeholder="Tell us about your project"
+                  name="message"
+                  placeholder="Tell us about your project *"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="w-full bg-white border border-[#d0d0d0] rounded-lg px-4 py-3 min-h-[120px] resize-none focus:outline-none focus:ring-2 focus:ring-black"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 />
               </div>
 
+              {status === 'success' && (
+                <p className="text-sm text-green-700 text-center">Message sent! We'll be in touch soon.</p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm text-red-600 text-center">{errorMsg}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-black text-white py-6 uppercase tracking-[0.2em] text-sm hover:bg-[#2a2a2a] transition-colors duration-300 rounded-lg"
+                disabled={status === 'submitting'}
+                className="w-full bg-black text-white py-6 uppercase tracking-[0.2em] text-sm hover:bg-[#2a2a2a] transition-colors duration-300 rounded-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                Submit Inquiry
+                {status === 'submitting' ? 'Sending…' : 'Send Message'}
               </button>
             </form>
           </div>

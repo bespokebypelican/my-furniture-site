@@ -8,7 +8,7 @@ export default function Page() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
-  const [activeTab, setActiveTab] = useState<'hosapalaya' | 'gangenahalli'>('hosapalaya');
+  const [activeTab, setActiveTab] = useState<'kudlu' | 'mekhri'>('kudlu');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -286,7 +286,7 @@ export default function Page() {
 
           {/* Tabs */}
           <div className="flex gap-8 border-b border-[#e0ddd6] mb-8">
-            {(['hosapalaya', 'gangenahalli'] as const).map((tab) => (
+            {(['kudlu', 'mekhri'] as const).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
@@ -305,19 +305,19 @@ export default function Page() {
                   transition: 'color 0.2s ease',
                 }}
               >
-                {tab === 'hosapalaya' ? 'Hosapalaya' : 'Gangenahalli'}
+                {tab === 'kudlu' ? 'Kudlu' : 'Mekhri Circle'}
               </button>
             ))}
           </div>
 
           {/* Map */}
-          <div className="w-full h-[340px] overflow-hidden border border-[#e0ddd6] mb-6" style={{ filter: 'grayscale(0.4) contrast(0.95)' }}>
+          <div className="w-full overflow-hidden border border-[#e0ddd6] mb-6" style={{ height: '340px', filter: 'grayscale(0.4) contrast(0.95)' }}>
             <iframe
               key={activeTab}
               src={
-                activeTab === 'hosapalaya'
-                  ? 'https://maps.google.com/maps?q=201%2FA+First+Floor%2C+Kudlu+Main+Rd%2C+Hosapalaya%2C+Muneshwara+Nagar%2C+Bengaluru%2C+Karnataka+560068&output=embed'
-                  : 'https://maps.google.com/maps?q=C.K.+Plaza+3rd+Floor%2C+Gangappa+Block+No.30%2C+New+PDI%2C+Bellary+Rd%2C+Gangenahalli%2C+Bengaluru%2C+Karnataka+560006&output=embed'
+                activeTab === 'kudlu'
+                  ? 'https://maps.google.com/maps?q=Pelican+Essentials%2C+Kudlu+Road%2C+Bengaluru+560068&output=embed'
+                  : 'https://maps.google.com/maps?q=C.K.+Plaza+3rd+Floor%2C+Gangappa+Block+No.30%2C+New+PDI%2C+Bellary+Rd%2C+Gangenahalli%2C+Bengaluru+560006&output=embed'
               }
               width="100%"
               height="100%"
@@ -325,24 +325,25 @@ export default function Page() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title={activeTab === 'hosapalaya' ? 'Hosapalaya Store' : 'Gangenahalli Store'}
+              title={activeTab === 'kudlu' ? 'Kudlu Store' : 'Mekhri Circle Store'}
             />
           </div>
 
-          {/* Address below map */}
-          {activeTab === 'hosapalaya' ? (
+          {/* Address + phone below map */}
+          {activeTab === 'kudlu' ? (
             <div className="space-y-1">
-              <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>#201/A, First Floor</p>
-              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Kudlu Main Rd, Hosapalaya</p>
-              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Muneshwara Nagar</p>
-              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Bengaluru, Karnataka 560068</p>
+              <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>Pelican Essentials</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Kudlu Road, Bengaluru 560068</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
+                <a href="tel:18008330046" style={{ textDecoration: 'none', color: 'inherit' }}>1800 833 0046</a>
+              </p>
             </div>
           ) : (
             <div className="space-y-1">
               <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>C.K. Plaza, 3rd Floor</p>
               <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Gangappa Block, No.30</p>
               <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>New PDI, Bellary Rd, Gangenahalli</p>
-              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Bengaluru, Karnataka 560006</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Bengaluru 560006</p>
             </div>
           )}
 

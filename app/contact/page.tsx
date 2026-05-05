@@ -8,6 +8,7 @@ export default function Page() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMsg, setErrorMsg] = useState('');
+  const [activeTab, setActiveTab] = useState<'hosapalaya' | 'gangenahalli'>('hosapalaya');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -271,7 +272,7 @@ export default function Page() {
         <section className="max-w-[1080px] mx-auto px-6 md:px-10 pb-16 md:pb-20">
 
           {/* Section Title */}
-          <div className="mb-10">
+          <div className="mb-8">
             <h2
               className="text-[24px] md:text-[28px] mb-2 tracking-[-0.01em]"
               style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, lineHeight: 1.2, color: '#2a2a2a' }}
@@ -283,69 +284,68 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-
-            {/* Left Side - Locations */}
-            <div>
-              <p className="text-[10px] tracking-[0.16em] uppercase text-[#8a8a8a] mb-8" style={{ fontWeight: 400 }}>
-                BENGALURU
-              </p>
-
-              <div className="space-y-10">
-                {/* Location 1 */}
-                <div className="space-y-1.5">
-                  <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>
-                    #201/A, First Floor
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Kudlu Main Rd, Hosapalaya
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Muneshwara Nagar
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Bengaluru, Karnataka 560068
-                  </p>
-                </div>
-
-                {/* Location 2 */}
-                <div className="space-y-1.5">
-                  <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>
-                    C.K. Plaza, 3rd Floor
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Gangappa Block, No.30
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    New PDI, Bellary Rd, Gangenahalli
-                  </p>
-                  <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>
-                    Bengaluru, Karnataka 560006
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Side - Map */}
-            <div>
-              <div className="relative w-full h-[340px] bg-[#e4e2dd] overflow-hidden border border-[#e0ddd6]" style={{ filter: 'grayscale(0.5) contrast(0.95)' }}>
-                <div className="absolute inset-0">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.0!2d77.6!3d12.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzAwLjAiTiA3N8KwMzYnMDAuMCJF!5e0!3m2!1sen!2sin!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Location Map"
-                  />
-                </div>
-                <div className="absolute inset-0 bg-[#f5f3ef]/20 pointer-events-none" />
-              </div>
-            </div>
-
+          {/* Tabs */}
+          <div className="flex gap-8 border-b border-[#e0ddd6] mb-8">
+            {(['hosapalaya', 'gangenahalli'] as const).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                style={{
+                  paddingBottom: '10px',
+                  fontSize: '13px',
+                  fontWeight: 400,
+                  letterSpacing: '0.08em',
+                  textTransform: 'uppercase',
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  borderBottom: activeTab === tab ? '2px solid #1a1a1a' : '2px solid transparent',
+                  color: activeTab === tab ? '#1a1a1a' : '#8a8a8a',
+                  marginBottom: '-1px',
+                  transition: 'color 0.2s ease',
+                }}
+              >
+                {tab === 'hosapalaya' ? 'Hosapalaya' : 'Gangenahalli'}
+              </button>
+            ))}
           </div>
+
+          {/* Map */}
+          <div className="w-full h-[340px] overflow-hidden border border-[#e0ddd6] mb-6" style={{ filter: 'grayscale(0.4) contrast(0.95)' }}>
+            <iframe
+              key={activeTab}
+              src={
+                activeTab === 'hosapalaya'
+                  ? 'https://maps.google.com/maps?q=201%2FA+First+Floor%2C+Kudlu+Main+Rd%2C+Hosapalaya%2C+Muneshwara+Nagar%2C+Bengaluru%2C+Karnataka+560068&output=embed'
+                  : 'https://maps.google.com/maps?q=C.K.+Plaza+3rd+Floor%2C+Gangappa+Block+No.30%2C+New+PDI%2C+Bellary+Rd%2C+Gangenahalli%2C+Bengaluru%2C+Karnataka+560006&output=embed'
+              }
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={activeTab === 'hosapalaya' ? 'Hosapalaya Store' : 'Gangenahalli Store'}
+            />
+          </div>
+
+          {/* Address below map */}
+          {activeTab === 'hosapalaya' ? (
+            <div className="space-y-1">
+              <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>#201/A, First Floor</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Kudlu Main Rd, Hosapalaya</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Muneshwara Nagar</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Bengaluru, Karnataka 560068</p>
+            </div>
+          ) : (
+            <div className="space-y-1">
+              <p className="text-[15px] text-[#2a2a2a]" style={{ fontWeight: 400, lineHeight: 1.6 }}>C.K. Plaza, 3rd Floor</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Gangappa Block, No.30</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>New PDI, Bellary Rd, Gangenahalli</p>
+              <p className="text-[14px] text-[#6a6a6a]" style={{ fontWeight: 300, lineHeight: 1.6 }}>Bengaluru, Karnataka 560006</p>
+            </div>
+          )}
+
         </section>
 
       </div>

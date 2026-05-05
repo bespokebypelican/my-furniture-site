@@ -20,7 +20,7 @@ export default function HeroSection() {
             At Bespoke by Pelican,
           </h1>
 
-          <div className="flex flex-col gap-[24px] md:gap-[28px] text-[#3a3a3a]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+          <div className="flex flex-col gap-[24px] md:gap-[28px] text-[#3a3a3a]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             <p className="text-[16px] md:text-[17px] lg:text-[18px] leading-[1.9] md:leading-[2] tracking-[0.01em]">
               we aim to demonstrate our expertise in creating furniture solutions fine tuned to your environment.
               We curate product design as experience — global in perspective, bespoke in execution, and rooted in narrative.

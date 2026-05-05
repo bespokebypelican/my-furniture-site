@@ -36,7 +36,7 @@ export default function ContactSection() {
       <div className="max-w-[1000px] mx-auto">
         <h2
           className="text-center text-5xl mb-4 tracking-tight"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          style={{ fontFamily: "'Playfair Display SC', serif" }}
         >
           Get in Touch
         </h2>
@@ -46,7 +46,7 @@ export default function ContactSection() {
 
         <div className="grid grid-cols-2 gap-16">
           <div>
-            <h3 className="text-2xl mb-8 tracking-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
+            <h3 className="text-2xl mb-8 tracking-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
               Contact Information
             </h3>
 

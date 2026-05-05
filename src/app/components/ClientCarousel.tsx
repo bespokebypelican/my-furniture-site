@@ -45,7 +45,7 @@ export default function ClientCarousel() {
       <div className="max-w-[900px] mx-auto">
         <h2
           className="text-center text-5xl mb-16 tracking-tight"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          style={{ fontFamily: "'Playfair Display SC', serif" }}
         >
           Client Testimonials
         </h2>
@@ -57,12 +57,12 @@ export default function ClientCarousel() {
                 <div className="text-center py-12">
                   <p
                     className="text-2xl leading-relaxed mb-8 text-[#2a2a2a] italic"
-                    style={{ fontFamily: "'Crimson Pro', serif" }}
+                    style={{ fontFamily: "'Playfair Display SC', serif" }}
                   >
                     "{testimonial.quote}"
                   </p>
                   <div className="border-t border-[#e0e0e0] pt-6 inline-block px-12">
-                    <p className="tracking-wide mb-1" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <p className="tracking-wide mb-1" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                       {testimonial.author}
                     </p>
                     <p className="text-sm text-[#666] tracking-wide uppercase">

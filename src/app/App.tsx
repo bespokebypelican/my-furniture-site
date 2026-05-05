@@ -104,7 +104,7 @@ export default function App() {
     ]
   };
   return (
-    <div className="w-full min-h-screen" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+    <div className="w-full min-h-screen" style={{ fontFamily: "'Montserrat', sans-serif" }}>
       <AnnouncementBar />
       <Navigation />
       <HeroSection />
@@ -112,7 +112,7 @@ export default function App() {
       <MasonryGallery id="inspiration" />
 
       {/* Process Section - Cinematic Editorial Design */}
-      <div className="w-full" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+      <div className="w-full" style={{ fontFamily: "'Montserrat', sans-serif" }}>
         {/* Top Intro Text */}
         <section className="w-full px-4 md:px-8 pt-[40px] md:pt-[48px] lg:pt-[64px] pb-[32px] md:pb-[40px] lg:pb-[56px] bg-gradient-to-b from-[#f5f5f3] to-[#fafafa]">
           <div className="max-w-[800px] mx-auto flex flex-col items-center text-center">
@@ -127,7 +127,7 @@ export default function App() {
         <section className="w-full">
           {/* Mobile Layout - Stacked */}
           <div className="md:hidden px-4 py-10 bg-white">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-[#666] mb-3" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-[#666] mb-3" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               01 — The Beginning
             </p>
             <h2 className="uppercase tracking-[0.2em] text-[#1a1a1a] text-[24px] mb-4 leading-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
@@ -172,7 +172,7 @@ export default function App() {
                 {/* Floating Glass Panel */}
                 <div className="bg-white/90 backdrop-blur-md p-10 lg:p-12 shadow-lg">
                   {/* Label */}
-                  <p className="text-[12px] uppercase tracking-[0.25em] text-[#666] mb-6" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <p className="text-[12px] uppercase tracking-[0.25em] text-[#666] mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     01 — The Beginning
                   </p>
 
@@ -198,7 +198,7 @@ export default function App() {
         <section className="w-full">
           {/* Mobile Layout - Stacked */}
           <div className="md:hidden px-4 py-10 bg-white">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-[#666] mb-3" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-[#666] mb-3" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               02 — Refinement
             </p>
             <h2 className="uppercase tracking-[0.2em] text-[#1a1a1a] text-[24px] mb-4 leading-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
@@ -244,7 +244,7 @@ export default function App() {
                 {/* Floating Glass Panel */}
                 <div className="bg-white/90 backdrop-blur-md p-8 lg:p-10 shadow-lg">
                   {/* Label */}
-                  <p className="text-[12px] uppercase tracking-[0.25em] text-[#666] mb-6" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <p className="text-[12px] uppercase tracking-[0.25em] text-[#666] mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     02 — Refinement
                   </p>
 
@@ -271,7 +271,7 @@ export default function App() {
         <section className="w-full">
           {/* Mobile Layout - Stacked */}
           <div className="md:hidden px-4 py-10 bg-white">
-            <p className="text-[11px] uppercase tracking-[0.25em] text-[#666] mb-3" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-[11px] uppercase tracking-[0.25em] text-[#666] mb-3" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               03 — Realisation
             </p>
             <h2 className="uppercase tracking-[0.2em] text-[#1a1a1a] text-[24px] mb-4 leading-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
@@ -317,7 +317,7 @@ export default function App() {
                 {/* Floating Glass Panel */}
                 <div className="bg-white/90 backdrop-blur-md p-8 lg:p-10 shadow-lg">
                   {/* Label */}
-                  <p className="text-[12px] uppercase tracking-[0.25em] text-[#666] mb-6" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+                  <p className="text-[12px] uppercase tracking-[0.25em] text-[#666] mb-6" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     03 — Realisation
                   </p>
 

@@ -29,7 +29,7 @@ export default function ProcessSection() {
       <div className="max-w-[1200px] mx-auto">
         <h2
           className="text-center text-5xl mb-4 tracking-tight"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          style={{ fontFamily: "'Playfair Display SC', serif" }}
         >
           Our Process
         </h2>
@@ -46,7 +46,7 @@ export default function ProcessSection() {
               <div className="w-24 h-24 border-2 border-black flex items-center justify-center mb-6 transition-all duration-300 group-hover:bg-black group-hover:scale-105">
                 <step.icon className="w-10 h-10 transition-colors duration-300 group-hover:text-white" />
               </div>
-              <h3 className="mb-3 tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <h3 className="mb-3 tracking-wide" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 {step.title}
               </h3>
               <p className="text-sm text-[#666] leading-relaxed">

@@ -24,21 +24,21 @@ export default function Navigation() {
           <Link
             href="/"
             className="text-[13px] tracking-wide transition-all duration-300 hover:text-gray-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-            style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Home
           </Link>
           <Link
             href="/inspiration"
             className="text-[13px] tracking-wide transition-all duration-300 hover:text-gray-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-            style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Inspiration
           </Link>
           <Link
             href="/contact"
             className="text-[13px] tracking-wide transition-all duration-300 hover:text-gray-300 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1px] after:bg-white after:transition-all after:duration-300 hover:after:w-full"
-            style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Contact Us
           </Link>
@@ -67,7 +67,7 @@ export default function Navigation() {
             <Link
               href="/"
               className="text-[13px] tracking-wide transition-all duration-300 hover:text-gray-300 py-2"
-              style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
@@ -75,7 +75,7 @@ export default function Navigation() {
             <Link
               href="/inspiration"
               className="text-[13px] tracking-wide transition-all duration-300 hover:text-gray-300 py-2"
-              style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Inspiration
@@ -83,7 +83,7 @@ export default function Navigation() {
             <Link
               href="/contact"
               className="text-[13px] tracking-wide transition-all duration-300 hover:text-gray-300 py-2"
-              style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+              style={{ fontFamily: "'Montserrat', sans-serif" }}
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us

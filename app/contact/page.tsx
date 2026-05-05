@@ -39,7 +39,7 @@ export default function Page() {
       <AnnouncementBar />
       <Navigation />
 
-      <div className="min-h-screen bg-[#faf9f7]" style={{ fontFamily: "'Inter', sans-serif" }}>
+      <div className="min-h-screen bg-[#faf9f7]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
 
         {/* Compact Banner */}
         <section
@@ -54,13 +54,13 @@ export default function Page() {
           <div className="text-center px-4 relative z-10">
             <h1
               className="text-[32px] md:text-[40px] mb-2 tracking-[-0.02em]"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, lineHeight: 1, color: '#2a2a2a' }}
+              style={{ fontFamily: "'Playfair Display SC', serif", fontWeight: 400, lineHeight: 1, color: '#2a2a2a' }}
             >
               Contact
             </h1>
             <p
               className="text-[11px] md:text-[12px] tracking-[0.16em] uppercase"
-              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 300, color: '#6a6a6a', lineHeight: 1.4 }}
+              style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, color: '#6a6a6a', lineHeight: 1.4 }}
             >
               We'd love to hear from you
             </p>
@@ -275,7 +275,7 @@ export default function Page() {
           <div className="mb-8">
             <h2
               className="text-[24px] md:text-[28px] mb-2 tracking-[-0.01em]"
-              style={{ fontFamily: "'Playfair Display', serif", fontWeight: 400, lineHeight: 1.2, color: '#2a2a2a' }}
+              style={{ fontFamily: "'Playfair Display SC', serif", fontWeight: 400, lineHeight: 1.2, color: '#2a2a2a' }}
             >
               Store Locator
             </h2>

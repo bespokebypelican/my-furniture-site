@@ -32,7 +32,7 @@ export function FurnitureCard({ imageUrl, title, category, isActive, onTap }: Fu
         transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1], delay: showPanel ? 0.07 : 0 }}
       >
         <h3 className="card-title" style={{
-          fontFamily: "'Cormorant Garamond', serif",
+          fontFamily: "'Playfair Display SC', serif",
           fontWeight: 500,
           color: "#1a1a1a",
           marginBottom: "0.2em",

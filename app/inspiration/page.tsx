@@ -20,7 +20,7 @@ export default function Page() {
             />
           </div>
           <div style={{ textAlign: "center", padding: "0 16px" }}>
-            <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(24px, 5vw, 42px)", fontWeight: 500, letterSpacing: "0.2em", color: "#2a2a2a", marginBottom: "8px" }}>
+            <h1 style={{ fontFamily: "'Playfair Display SC', serif", fontSize: "clamp(24px, 5vw, 42px)", fontWeight: 500, letterSpacing: "0.2em", color: "#2a2a2a", marginBottom: "8px" }}>
               DESIGNS WORTH LIVING WITH
             </h1>
             <p style={{ fontSize: "14px", color: "#999", fontStyle: "italic" }}>

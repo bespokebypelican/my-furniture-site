@@ -18,14 +18,14 @@ export default function Footer() {
 
           {/* Column 1 - Pelican Essentials */}
           <div className="flex flex-col gap-[20px]">
-            <h3 className="text-[13px] md:text-[14px] text-white tracking-[0.02em] leading-[1.6]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <h3 className="text-[13px] md:text-[14px] text-white tracking-[0.02em] leading-[1.6]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Other brands and offerings from Pelican:
             </h3>
             <div className="flex flex-col gap-[12px]">
               <div className="w-[140px] h-[60px] bg-[#222] flex items-center justify-center">
-                <span className="text-[11px] text-[#888] tracking-wide" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>LOGO</span>
+                <span className="text-[11px] text-[#888] tracking-wide" style={{ fontFamily: "'Montserrat', sans-serif" }}>LOGO</span>
               </div>
-              <p className="text-[13px] text-[#a0a0a0] tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <p className="text-[13px] text-[#a0a0a0] tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Category defining sofas
               </p>
             </div>
@@ -36,13 +36,13 @@ export default function Footer() {
             <h3 className="text-[16px] md:text-[17px] text-white tracking-[0.05em] mb-[4px]" style={{ fontFamily: "'Playfair Display SC', serif" }}>
               Bespoke By Pelican
             </h3>
-            <p className="text-[14px] text-[#d0d0d0] italic tracking-[0.02em] mb-[8px]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-[14px] text-[#d0d0d0] italic tracking-[0.02em] mb-[8px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Never Ordinary
             </p>
-            <p className="text-[13px] text-[#a0a0a0] leading-[1.7] tracking-[0.01em] mb-[12px]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-[13px] text-[#a0a0a0] leading-[1.7] tracking-[0.01em] mb-[12px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               An internet-first brand of home furniture solutions designed & developed to customer's requirement.
             </p>
-            <div className="text-[12px] text-[#a0a0a0] leading-[1.8] tracking-[0.005em] flex flex-col gap-[4px]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <div className="text-[12px] text-[#a0a0a0] leading-[1.8] tracking-[0.005em] flex flex-col gap-[4px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               <p>Constellate Manufacturing Private Limited</p>
               <p>bespokebypelican@gmail.com</p>
               <p className="mt-[6px]">CIN: U74999KA2018PTC112703</p>
@@ -56,28 +56,28 @@ export default function Footer() {
           {/* Column 3 - Links */}
           <div className="flex flex-col gap-[20px]">
             <nav className="flex flex-col gap-[10px]">
-              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 About Us
               </a>
-              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Blogs
               </a>
-              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Terms of Service
               </a>
-              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Privacy Policy
               </a>
-              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Shipping Policy
               </a>
-              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Warranty
               </a>
-              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="#" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 FAQs
               </a>
-              <a href="/contact" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+              <a href="/contact" className="text-[13px] text-[#a0a0a0] hover:text-white transition-colors duration-300 tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 Contact Us
               </a>
             </nav>
@@ -88,7 +88,7 @@ export default function Footer() {
             <h3 className="text-[16px] md:text-[17px] text-white tracking-[0.05em]" style={{ fontFamily: "'Playfair Display SC', serif" }}>
               Newsletter
             </h3>
-            <p className="text-[13px] text-[#a0a0a0] leading-[1.7] tracking-[0.01em]" style={{ fontFamily: "'Nunito Sans', sans-serif" }}>
+            <p className="text-[13px] text-[#a0a0a0] leading-[1.7] tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Sign up to our newsletter to receive exclusive offers
             </p>
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-[10px]">
@@ -98,12 +98,12 @@ export default function Footer() {
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 className="w-full px-[14px] py-[12px] border border-[#444] bg-[#111] text-white text-[13px] focus:outline-none focus:border-white transition-all duration-300 placeholder:text-[#666]"
-                style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
               />
               <button
                 type="submit"
                 className="w-full bg-white text-black py-[12px] px-[16px] text-[13px] hover:bg-[#e0e0e0] transition-all duration-300 uppercase tracking-[0.12em] font-medium"
-                style={{ fontFamily: "'Nunito Sans', sans-serif" }}
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 Subscribe
               </button>

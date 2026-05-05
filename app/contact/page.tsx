@@ -5,24 +5,32 @@ import Navigation from '../../src/app/components/Navigation';
 import Footer from '../../src/app/components/Footer';
 
 export default function Page() {
-  const [formData, setFormData] = useState({
-    name: '',
-    contact: '',
-    email: '',
-    message: ''
-  });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', contact: '', email: '', message: '' });
+    setStatus('submitting');
+    setErrorMsg('');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Something went wrong.');
+      setStatus('success');
+      setFormData({ name: '', phone: '', email: '', message: '' });
+    } catch (err: any) {
+      setStatus('error');
+      setErrorMsg(err.message || 'Something went wrong. Please try again.');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -174,10 +182,9 @@ export default function Page() {
                     <input
                       type="text"
                       name="name"
-                      placeholder="Name"
+                      placeholder="Name (optional)"
                       value={formData.name}
                       onChange={handleChange}
-                      required
                       className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
                       style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.015)' }}
                     />
@@ -186,9 +193,9 @@ export default function Page() {
                   <div>
                     <input
                       type="tel"
-                      name="contact"
-                      placeholder="Contact Number"
-                      value={formData.contact}
+                      name="phone"
+                      placeholder="Phone Number *"
+                      value={formData.phone}
                       onChange={handleChange}
                       required
                       className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
@@ -200,10 +207,9 @@ export default function Page() {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Email"
+                      placeholder="Email (optional)"
                       value={formData.email}
                       onChange={handleChange}
-                      required
                       className="w-full px-5 py-3 bg-transparent border border-[#d8d6d1] text-[14px] text-[#1a1a1a] placeholder:text-[#ababab] focus:outline-none focus:border-[#3a3a3a] transition-all"
                       style={{ borderRadius: 0, fontWeight: 300, boxShadow: 'inset 0 1px 2px rgba(0, 0, 0, 0.015)' }}
                     />
@@ -212,7 +218,7 @@ export default function Page() {
                   <div>
                     <textarea
                       name="message"
-                      placeholder="Message"
+                      placeholder="Message *"
                       value={formData.message}
                       onChange={handleChange}
                       required
@@ -222,9 +228,19 @@ export default function Page() {
                     />
                   </div>
 
+                  {status === 'success' && (
+                    <p className="text-[13px] text-green-700 text-center">
+                      Message sent! We'll be in touch soon.
+                    </p>
+                  )}
+                  {status === 'error' && (
+                    <p className="text-[13px] text-red-600 text-center">{errorMsg}</p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full bg-[#1a1a1a] text-white py-3.5 text-[13px] tracking-[0.12em] uppercase transition-all hover:bg-[#2a2a2a]"
+                    disabled={status === 'submitting'}
+                    className="w-full bg-[#1a1a1a] text-white py-3.5 text-[13px] tracking-[0.12em] uppercase transition-all hover:bg-[#2a2a2a] disabled:opacity-60 disabled:cursor-not-allowed"
                     style={{
                       borderRadius: 0,
                       fontWeight: 400,
@@ -241,7 +257,7 @@ export default function Page() {
                       e.currentTarget.style.boxShadow = '0 1px 4px rgba(0, 0, 0, 0.06)';
                     }}
                   >
-                    Send Message
+                    {status === 'submitting' ? 'Sending…' : 'Send Message'}
                   </button>
 
                 </form>

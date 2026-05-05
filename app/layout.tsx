@@ -18,23 +18,32 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bespokebypelican.com'),
   title: "Bespoke By Pelican | Luxury Custom Furniture",
   description: "Bespoke by Pelican crafts premium custom furniture solutions designed to your requirement. Thoughtfully crafted, exceptionally yours. Based in Bengaluru, India.",
   keywords: "bespoke furniture, custom furniture, luxury furniture, furniture design, Bengaluru furniture, custom sofa, interior design",
+  alternates: {
+    canonical: 'https://bespokebypelican.com',
+  },
   openGraph: {
     title: "Bespoke By Pelican | Luxury Custom Furniture",
     description: "Premium custom furniture solutions designed to your requirement.",
     url: "https://bespokebypelican.com",
     siteName: "Bespoke By Pelican",
     type: "website",
+    locale: 'en_IN',
+    images: [{ url: '/og-image.jpg' }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Bespoke By Pelican | Luxury Custom Furniture",
     description: "Premium custom furniture solutions designed to your requirement.",
+    site: '@bespokebypelican',
+    images: ['/og-image.jpg'],
   },
   icons: {
     icon: '/bird-favicon.png',
+    apple: '/bird-favicon.png',
   },
 };
 
@@ -61,6 +70,42 @@ export default function RootLayout({
             gtag('config', 'G-ZX2LGDNF1X');
           `}
         </Script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FurnitureStore',
+              name: 'Bespoke By Pelican',
+              url: 'https://bespokebypelican.com',
+              logo: 'https://bespokebypelican.com/bird-favicon.png',
+              image: 'https://bespokebypelican.com/og-image.jpg',
+              description: 'Premium custom furniture crafted in Bengaluru',
+              telephone: '+916397985077',
+              email: 'bespokebypelican@gmail.com',
+              priceRange: '₹₹₹',
+              address: [
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'Kudlu Main Rd, Hosapalaya',
+                  addressLocality: 'Bengaluru',
+                  addressRegion: 'Karnataka',
+                  postalCode: '560068',
+                  addressCountry: 'IN',
+                },
+                {
+                  '@type': 'PostalAddress',
+                  streetAddress: 'C.K. Plaza, Gangappa Block, Bellary Rd, Gangenahalli',
+                  addressLocality: 'Bengaluru',
+                  addressRegion: 'Karnataka',
+                  postalCode: '560006',
+                  addressCountry: 'IN',
+                },
+              ],
+              sameAs: ['https://www.instagram.com/bespokebypelican'],
+            }),
+          }}
+        />
         <ScrollReveal />
         {children}
         <FloatingButtons />

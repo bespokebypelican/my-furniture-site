@@ -3,11 +3,11 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 const products = [
   { src: '/aari bed.jpeg',    name: 'Aari Bed',             url: 'https://pelicanessentials.com/products/aari-bed-solid-teak-walnut-oak-wood' },
   { src: '/Mowa bed.jpeg',    name: 'Mowa Bed',             url: 'https://pelicanessentials.com/products/mowa-bed-solid-teak-wood-queen' },
-  { src: '/lore1.jpeg',       name: 'Herança 3 Seater',     url: 'https://pelicanessentials.com/products/heranca-3-seater' },
+  { src: '/lore1.jpeg',       name: 'Lore 3 Seater',        url: 'https://pelicanessentials.com/products/heranca-3-seater' },
   { src: '/serenity.jpeg',    name: 'Serenity Table',       url: 'https://pelicanessentials.com/products/serenity-table-5x3-feet-solid-teak' },
   { src: '/slumbr.jpeg',      name: 'Slumbr Sofa Cum Bed',  url: 'https://pelicanessentials.com/products/slumbr-sleeper-sofa-sofa-cum-bed-7-feet' },
   { src: '/palo leather.jpeg',name: 'Palo Sofa — Leather',  url: 'https://pelicanessentials.com/products/palo-sofa-3-seater-7-5-feet-genuine-leather' },
-  { src: '/lore.jpeg',        name: 'Loveseat',             url: 'https://pelicanessentials.com/products/loveseat' },
+  { src: '/lore.jpeg',        name: 'Lore Loveseat',        url: 'https://pelicanessentials.com/products/loveseat' },
   { src: '/lumo.jpeg',        name: 'Lumo Sofa',            url: 'https://pelicanessentials.com/collections/lumo-sofa-sets' },
   { src: '/kosha.jpeg',       name: 'Kosha Dining Table',   url: 'https://pelicanessentials.com/products/kosha-dining-table-7-feet-solid-teak-walnut-oak-wood-copy' },
   { src: '/anne.jpeg',        name: 'Anne Sofa',            url: 'https://pelicanessentials.com/collections/anne-sofa-sets' },

@@ -140,7 +140,7 @@ export default function App() {
             </h2>
             <div className="w-full mb-5">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1581858726788-75bc0f1a4471?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBmdXJuaXR1cmUlMjBkZXNpZ24lMjB0ZWNobmljYWx8ZW58MXx8fHwxNzc3MzYzNDUzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/Product-design.jpg"
                 alt="Product design phase"
                 className="w-full h-[240px] object-cover grayscale-[25%]"
               />
@@ -156,7 +156,7 @@ export default function App() {
             {/* Background Image */}
             <div className="absolute inset-0">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1581858726788-75bc0f1a4471?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBmdXJuaXR1cmUlMjBkZXNpZ24lMjB0ZWNobmljYWx8ZW58MXx8fHwxNzc3MzYzNDUzfDA&ixlib=rb-4.1.0&q=80&w=1080"
+                src="/Product-design.jpg"
                 alt="Product design phase"
                 className="w-full h-full object-cover"
                 style={{ filter: 'grayscale(25%) brightness(0.88)' }}

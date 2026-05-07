@@ -9,12 +9,14 @@ const playfairSC = Playfair_Display_SC({
   variable: "--font-heading",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
 });
 
 const montserrat = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

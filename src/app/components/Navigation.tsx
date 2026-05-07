@@ -68,9 +68,9 @@ export default function Navigation() {
         }}
       >
         <div className="max-w-[1400px] mx-auto flex items-center justify-between">
-          <div className="h-8 md:h-10">
+          <Link href="/" className="h-8 md:h-10 block">
             <img src={logoImage} alt="Bespoke By Pelican" className="h-full w-auto object-contain" />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-10">

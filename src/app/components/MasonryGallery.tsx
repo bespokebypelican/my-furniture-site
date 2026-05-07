@@ -39,20 +39,16 @@ export default function MasonryGallery({ id }: { id?: string }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      alignItems: 'center',
-                      justifyContent: 'center',
+                      display: 'block',
                       position: 'relative',
                       overflow: 'hidden',
-                      backgroundColor: '#1A1A1A',
                       aspectRatio: '4/3',
                     }}
                   >
                     <img
                       src="/pe logo.png"
                       alt="Pelican Essentials"
-                      style={{ width: '60%', maxWidth: '180px', height: 'auto', filter: 'invert(1)', display: 'block' }}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     />
                   </a>
                 ) : (

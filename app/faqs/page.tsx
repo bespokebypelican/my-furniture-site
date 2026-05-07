@@ -2,26 +2,27 @@ import type { Metadata } from 'next';
 import AnnouncementBar from '../../src/app/components/AnnouncementBar';
 import Navigation from '../../src/app/components/Navigation';
 import Footer from '../../src/app/components/Footer';
+import FaqAccordion from '../../src/app/components/FaqAccordion';
 
 export const metadata: Metadata = {
   title: 'FAQs | Bespoke By Pelican',
   description: 'Frequently asked questions about Bespoke By Pelican custom furniture — process, materials, delivery and more.',
 };
 
+const playfair = { fontFamily: "'Playfair Display SC', serif" } as React.CSSProperties;
+
 export default function Page() {
   return (
     <>
       <AnnouncementBar />
       <Navigation />
-      <main style={{ minHeight: '60vh', backgroundColor: '#F7F4EE', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '64px 32px' }}>
-        <div style={{ textAlign: 'center', maxWidth: '600px' }}>
-          <h1 style={{ fontFamily: "'Playfair Display SC', serif", fontSize: 'clamp(28px, 5vw, 48px)', color: '#1A1A1A', marginBottom: '24px', letterSpacing: '-0.01em' }}>
+      <main style={{ backgroundColor: '#F7F4EE', padding: '80px 32px 100px', minHeight: '70vh' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <h1 style={{ ...playfair, fontSize: 'clamp(32px, 5vw, 48px)', color: '#1A1A1A', marginBottom: '16px', letterSpacing: '0.02em' }}>
             FAQs
           </h1>
-          <p style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '15px', color: '#6B6560', lineHeight: 1.9, letterSpacing: '0.01em' }}>
-            Answers to our most frequently asked questions are coming soon. Have a question right now?{' '}
-            <a href="/contact" style={{ color: '#C9A96E', textDecoration: 'none', borderBottom: '1px solid #C9A96E' }}>Reach out to us</a>.
-          </p>
+          <div style={{ width: '48px', height: '1px', backgroundColor: '#C9A96E', marginBottom: '48px' }} />
+          <FaqAccordion />
         </div>
       </main>
       <Footer />

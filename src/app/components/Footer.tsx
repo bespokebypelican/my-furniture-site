@@ -69,7 +69,7 @@ export default function Footer() {
           {/* Column 3 - Links */}
           <div className="flex flex-col gap-[20px]">
             <nav className="flex flex-col gap-[10px]">
-              {[['#', 'About Us'], ['#', 'Blogs'], ['#', 'Terms of Service'], ['#', 'Privacy Policy'], ['#', 'Shipping Policy'], ['#', 'Warranty'], ['#', 'FAQs'], ['/contact', 'Contact Us']].map(([href, label]) => (
+              {[['/about', 'About Us'], ['/blogs', 'Blogs'], ['/terms', 'Terms of Service'], ['/privacy', 'Privacy Policy'], ['/shipping', 'Shipping Policy'], ['/warranty', 'Warranty'], ['/faqs', 'FAQs'], ['/contact', 'Contact Us']].map(([href, label]) => (
                 <a key={label} href={href} style={footerLink} onMouseEnter={hoverGold} onMouseLeave={unhoverGold}>
                   {label}
                 </a>

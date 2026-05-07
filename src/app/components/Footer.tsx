@@ -35,9 +35,9 @@ export default function Footer() {
               Other brands and offerings from Pelican:
             </h3>
             <div className="flex flex-col gap-[12px]">
-              <div className="w-[140px] h-[60px] bg-[#222] flex items-center justify-center">
-                <span style={{ ...montserrat, fontSize: '11px', color: '#888', letterSpacing: '0.06em' }}>LOGO</span>
-              </div>
+              <a href="https://pelicanessentials.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
+                <img src="/Pelican-white.png" alt="Pelican Essentials" style={{ width: '120px', height: 'auto', display: 'block' }} />
+              </a>
               <p style={{ ...montserrat, fontSize: '13px', color: '#6B6560', letterSpacing: '0.01em' }}>
                 Category defining sofas
               </p>

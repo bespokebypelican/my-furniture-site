@@ -36,7 +36,7 @@ export default function FloatingButtons() {
   return (
     <>
       <a
-        href="tel:+916397985077"
+        href="tel:+917505234884"
         aria-label="Call us"
         style={{ ...baseStyle, bottom: "24px", left: "24px" }}
         onMouseEnter={onEnter}
@@ -46,7 +46,7 @@ export default function FloatingButtons() {
       </a>
 
       <a
-        href="https://wa.me/916397985077"
+        href="https://wa.me/917505234884"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

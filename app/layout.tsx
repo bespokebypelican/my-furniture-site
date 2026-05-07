@@ -83,7 +83,7 @@ export default function RootLayout({
               logo: 'https://bespokebypelican.com/bird-favicon.png',
               image: 'https://bespokebypelican.com/og-image.jpg',
               description: 'Premium custom furniture crafted in Bengaluru',
-              telephone: '+916397985077',
+              telephone: '+917505234884',
               email: 'bespokebypelican@gmail.com',
               priceRange: '₹₹₹',
               address: [

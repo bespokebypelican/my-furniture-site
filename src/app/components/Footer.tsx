@@ -39,7 +39,7 @@ export default function Footer() {
                 <img src="/Pelican-white.png" alt="Pelican Essentials" style={{ width: '120px', height: 'auto', display: 'block' }} />
               </a>
               <p style={{ ...montserrat, fontSize: '13px', color: '#6B6560', letterSpacing: '0.01em' }}>
-                Category defining sofas
+                Thoughtfully Crafted Furniture
               </p>
             </div>
           </div>

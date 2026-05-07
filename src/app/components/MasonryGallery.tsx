@@ -50,7 +50,7 @@ export default function MasonryGallery({ id }: { id?: string }) {
                     }}
                   >
                     <img
-                      src="/pe_logo.png"
+                      src="/pe logo.png"
                       alt="Pelican Essentials"
                       style={{ width: '60%', maxWidth: '180px', height: 'auto', filter: 'invert(1)', display: 'block' }}
                     />

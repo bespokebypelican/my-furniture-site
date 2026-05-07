@@ -46,7 +46,7 @@ export default function MasonryGallery({ id }: { id?: string }) {
                     }}
                   >
                     <img
-                      src="/pe logo.png"
+                      src="/pe logo.jpg"
                       alt="Pelican Essentials"
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     />

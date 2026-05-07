@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { CollageLayout } from "../../src/app/components/CollageLayout";
 import AnnouncementBar from "../../src/app/components/AnnouncementBar";
 import Navigation from "../../src/app/components/Navigation";
@@ -20,11 +21,14 @@ export default function Page() {
 
         {/* HERO SECTION */}
         <section style={{ marginBottom: "48px", width: "100%" }}>
-          <div style={{ overflow: "hidden", marginBottom: "24px", width: "100%" }}>
-            <img
+          <div style={{ position: "relative", overflow: "hidden", marginBottom: "24px", width: "100%", height: "500px" }}>
+            <Image
               src="https://images.unsplash.com/photo-1687180497278-ca4d736ecc99?w=1600&q=80"
-              alt="Hero"
-              style={{ width: "100%", height: "auto", maxHeight: "500px", objectFit: "cover", display: "block" }}
+              alt="Luxury furniture inspiration"
+              fill
+              priority
+              style={{ objectFit: "cover" }}
+              sizes="100vw"
             />
           </div>
           <div style={{ textAlign: "center", padding: "0 16px" }}>

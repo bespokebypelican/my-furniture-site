@@ -1,4 +1,5 @@
 "use client"
+import Image from 'next/image';
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -8,9 +9,10 @@ interface FurnitureCardProps {
   category: string;
   isActive: boolean;
   onTap: () => void;
+  aspectRatio?: string;
 }
 
-export function FurnitureCard({ imageUrl, title, category, isActive, onTap }: FurnitureCardProps) {
+export function FurnitureCard({ imageUrl, title, category, isActive, onTap, aspectRatio = '4/3' }: FurnitureCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const isTouch = typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
   const showPanel = isTouch ? isActive : isHovered;
@@ -18,12 +20,18 @@ export function FurnitureCard({ imageUrl, title, category, isActive, onTap }: Fu
   return (
     <div
       className="relative overflow-hidden cursor-pointer w-full"
-      style={{ borderRadius: 0 }}
+      style={{ borderRadius: 0, aspectRatio }}
       onMouseEnter={() => { if (!isTouch) setIsHovered(true); }}
       onMouseLeave={() => { if (!isTouch) setIsHovered(false); }}
       onClick={onTap}
     >
-      <img src={imageUrl} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
+      <Image
+        src={imageUrl}
+        alt={title}
+        fill
+        style={{ objectFit: 'cover' }}
+        sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 33vw"
+      />
 
       <motion.div
         className="absolute bottom-0 left-0 right-0"

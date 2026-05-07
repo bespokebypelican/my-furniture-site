@@ -11,12 +11,13 @@ const items: Item[] = [
   { src: '/serenity.jpeg',    name: 'Serenity Table',       url: 'https://pelicanessentials.com/products/serenity-table-5x3-feet-solid-teak' },
   { src: '/slumbr.jpeg',      name: 'Slumbr Sofa Cum Bed',  url: 'https://pelicanessentials.com/products/slumbr-sleeper-sofa-sofa-cum-bed-7-feet' },
   { brand: true,                                             url: 'https://pelicanessentials.com' },
-  { src: '/lore.jpeg',        name: 'Lore Loveseat',        url: 'https://pelicanessentials.com/products/loveseat' },
+  { src: '/palo leather.jpeg',name: 'Palo Sofa — Leather',  url: 'https://pelicanessentials.com/products/palo-sofa-3-seater-7-5-feet-genuine-leather' },
   { src: '/lumo.jpeg',        name: 'Lumo Sofa',            url: 'https://pelicanessentials.com/collections/lumo-sofa-sets' },
   { src: '/kosha.jpeg',       name: 'Kosha Dining Table',   url: 'https://pelicanessentials.com/products/kosha-dining-table-7-feet-solid-teak-walnut-oak-wood-copy' },
   { src: '/anne.jpeg',        name: 'Anne Sofa',            url: 'https://pelicanessentials.com/collections/anne-sofa-sets' },
   { src: '/elan dining.jpeg', name: 'Elan Dining Table',    url: 'https://pelicanessentials.com/products/elan-dining-table-6-feet-solid-teak-walnut-oak-wood' },
   { src: '/Palo.jpeg',        name: 'Palo Sectional',       url: 'https://pelicanessentials.com/products/sectional-wood-legs' },
+  { src: '/lore.jpeg',        name: 'Lore Loveseat',        url: 'https://pelicanessentials.com/products/loveseat' },
 ];
 
 export default function MasonryGallery({ id }: { id?: string }) {
@@ -46,7 +47,6 @@ export default function MasonryGallery({ id }: { id?: string }) {
                       overflow: 'hidden',
                       backgroundColor: '#1A1A1A',
                       aspectRatio: '4/3',
-                      gap: '20px',
                     }}
                   >
                     <img
@@ -54,21 +54,6 @@ export default function MasonryGallery({ id }: { id?: string }) {
                       alt="Pelican Essentials"
                       style={{ width: '60%', maxWidth: '180px', height: 'auto', filter: 'invert(1)', display: 'block' }}
                     />
-                    <p
-                      className="opacity-0 group-hover:opacity-100"
-                      style={{
-                        fontFamily: "'Montserrat', sans-serif",
-                        fontSize: '10px',
-                        letterSpacing: '0.18em',
-                        textTransform: 'uppercase',
-                        color: '#C9A96E',
-                        textAlign: 'center',
-                        margin: 0,
-                        transition: 'opacity 0.35s ease',
-                      }}
-                    >
-                      Shop Pelican Essentials
-                    </p>
                   </a>
                 ) : (
                   /* Regular product card */

@@ -4,8 +4,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
-const logoImage = '/bird-favicon.png';
-
 const navLinks = [
   ['/', 'Home'],
   ['/inspiration', 'Inspiration'],
@@ -68,8 +66,13 @@ export default function Navigation() {
         }}
       >
         <div className="max-w-[1400px] mx-auto flex items-center justify-between">
-          <Link href="/" className="h-8 md:h-10 block">
-            <img src={logoImage} alt="Bespoke By Pelican" className="h-full w-auto object-contain" />
+          <Link href="/" className="block">
+            <span className="hidden md:block">
+              <img src="/Untitled_design_(5).png" alt="Bespoke By Pelican" className="h-10 w-auto object-contain" />
+            </span>
+            <span className="block md:hidden">
+              <img src="/logoPhone.png" alt="Bespoke By Pelican" style={{ height: '40px', width: 'auto', objectFit: 'contain', filter: 'brightness(1.1) contrast(1.1)' }} />
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

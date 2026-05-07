@@ -1,54 +1,18 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
-const images = [
-  {
-    src: "https://images.unsplash.com/photo-1757262798677-ab4af4455a58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBtb2Rlcm4lMjBzb2ZhJTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDF8fHx8MTc3NzQwMjQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Spacious modern living room",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1586310520462-658e93388399?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYmVkcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDF8fHx8MTc3NzI4ODQzNXww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Minimalist bedroom",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1719716133741-9f8f35b3cb04?w=600&h=600&fit=crop&auto=format",
-    alt: "Brand showcase",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1610307522657-8c0304960189?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwYmVkcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDF8fHx8MTc3NzI4ODQzNXww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Bedroom interior",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1774551351897-c64cd76a7c22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBtb2Rlcm4lMjBzb2ZhJTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDF8fHx8MTc3NzQwMjQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Modern living room",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1704040686446-428673c1c887?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkaW5pbmclMjByb29tJTIwZnVybml0dXJlfGVufDF8fHx8MTc3NzQwMjQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Dining room",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1765766638343-e5f5cc8081d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw5fHxsdXh1cnklMjBtb2Rlcm4lMjBzb2ZhJTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDF8fHx8MTc3NzQwMjQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Gray sofa with marble table",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1704040686533-694c5b9c52c4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBkaW5pbmclMjByb29tJTIwZnVybml0dXJlfGVufDF8fHx8MTc3NzQwMjQ3NHww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Dining chandelier",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1775241183056-06f3f6c10c76?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHw1fHxtaW5pbWFsaXN0JTIwYmVkcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDF8fHx8MTc3NzI4ODQzNXww&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Modern bedroom",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtaW5pbWFsaXN0JTIwZnVybml0dXJlJTIwc2hvd3Jvb218ZW58MXx8fHwxNzc3MzYzNDUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    alt: "Furniture showroom",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1757262798677-ab4af4455a58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBtb2Rlcm4lMjBzb2ZhJTIwbGl2aW5nJTIwcm9vbSUyMGludGVyaW9yfGVufDF8fHx8MTc3NzQwMjQ3NHww&ixlib=rb-4.1.0&q=80&w=400",
-    alt: "Panoramic living room",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBtaW5pbWFsaXN0JTIwZnVybml0dXJlJTIwc2hvd3Jvb218ZW58MXx8fHwxNzc3MzYzNDUzfDA&ixlib=rb-4.1.0&q=80&w=400",
-    alt: "Minimalist furniture display",
-  },
+const products = [
+  { src: '/aari bed.jpeg',    name: 'Aari Bed',             url: 'https://pelicanessentials.com/products/aari-bed-solid-teak-walnut-oak-wood' },
+  { src: '/Mowa bed.jpeg',    name: 'Mowa Bed',             url: 'https://pelicanessentials.com/products/mowa-bed-solid-teak-wood-queen' },
+  { src: '/lore1.jpeg',       name: 'Herança 3 Seater',     url: 'https://pelicanessentials.com/products/heranca-3-seater' },
+  { src: '/serenity.jpeg',    name: 'Serenity Table',       url: 'https://pelicanessentials.com/products/serenity-table-5x3-feet-solid-teak' },
+  { src: '/slumbr.jpeg',      name: 'Slumbr Sofa Cum Bed',  url: 'https://pelicanessentials.com/products/slumbr-sleeper-sofa-sofa-cum-bed-7-feet' },
+  { src: '/palo leather.jpeg',name: 'Palo Sofa — Leather',  url: 'https://pelicanessentials.com/products/palo-sofa-3-seater-7-5-feet-genuine-leather' },
+  { src: '/lore.jpeg',        name: 'Loveseat',             url: 'https://pelicanessentials.com/products/loveseat' },
+  { src: '/lumo.jpeg',        name: 'Lumo Sofa',            url: 'https://pelicanessentials.com/collections/lumo-sofa-sets' },
+  { src: '/kosha.jpeg',       name: 'Kosha Dining Table',   url: 'https://pelicanessentials.com/products/kosha-dining-table-7-feet-solid-teak-walnut-oak-wood-copy' },
+  { src: '/anne.jpeg',        name: 'Anne Sofa',            url: 'https://pelicanessentials.com/collections/anne-sofa-sets' },
+  { src: '/elan dining.jpeg', name: 'Elan Dining Table',    url: 'https://pelicanessentials.com/products/elan-dining-table-6-feet-solid-teak-walnut-oak-wood' },
+  { src: '/Palo.jpeg',        name: 'Palo Sectional',       url: 'https://pelicanessentials.com/products/sectional-wood-legs' },
 ];
 
 export default function MasonryGallery({ id }: { id?: string }) {
@@ -56,18 +20,53 @@ export default function MasonryGallery({ id }: { id?: string }) {
     <section id={id} className="w-full bg-white py-[40px] md:py-[48px] lg:py-[64px] px-4 md:px-8">
       <div className="max-w-[1300px] mx-auto flex flex-col items-center">
         <div className="w-full mb-[32px] md:mb-[40px] lg:mb-[48px]">
-          <div className="masonry-gallery" style={{ columns: '3', columnGap: '8px', alignContent: 'start', alignItems: 'start' }}>
-            {images.map((image, index) => (
+          <div className="masonry-gallery" style={{ columns: '3', columnGap: '8px' }}>
+            {products.map((product, index) => (
               <div
                 key={index}
-                className="overflow-hidden shadow-sm group cursor-pointer"
+                className="overflow-hidden shadow-sm group"
                 style={{ breakInside: 'avoid', marginBottom: '8px' }}
               >
-                <ImageWithFallback
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-auto block grayscale-[15%] transition-all duration-700 group-hover:scale-110 group-hover:grayscale-0"
-                />
+                <a
+                  href={product.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'block', position: 'relative', overflow: 'hidden' }}
+                >
+                  <ImageWithFallback
+                    src={product.src}
+                    alt={product.name}
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover', display: 'block', transition: 'transform 0.6s ease' }}
+                    className="group-hover:scale-105"
+                  />
+                  {/* Darken overlay */}
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100"
+                    style={{ backgroundColor: 'rgba(0,0,0,0.2)', transition: 'opacity 0.35s ease', zIndex: 1 }}
+                  />
+                  {/* Product name label */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100"
+                    style={{
+                      backgroundColor: 'rgba(26,26,26,0.88)',
+                      padding: '10px 14px',
+                      transition: 'opacity 0.35s ease',
+                      zIndex: 2,
+                    }}
+                  >
+                    <p style={{
+                      fontFamily: "'Montserrat', sans-serif",
+                      fontSize: '10px',
+                      letterSpacing: '0.15em',
+                      textTransform: 'uppercase',
+                      color: '#C9A96E',
+                      textAlign: 'center',
+                      margin: 0,
+                    }}>
+                      {product.name}
+                    </p>
+                  </div>
+                </a>
               </div>
             ))}
           </div>

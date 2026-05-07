@@ -1,7 +1,9 @@
 "use client"
 import { useState, useEffect } from "react";
-import { FurnitureCard } from "./FurnitureCard";
+import dynamic from "next/dynamic";
 import { supabase } from "../../../lib/supabase";
+
+const FurnitureCard = dynamic(() => import("./FurnitureCard").then(m => ({ default: m.FurnitureCard })), { ssr: false });
 import { Search, ChevronDown } from "lucide-react";
 
 type SupabasePhoto = {

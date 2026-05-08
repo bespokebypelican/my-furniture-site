@@ -22,10 +22,10 @@ export default function Page() {
         <section style={{ marginBottom: "48px", width: "100%" }}>
           <video
             autoPlay
-            muted
             loop
+            muted
             playsInline
-            style={{ width: '100%', height: '500px', objectFit: 'cover', display: 'block' }}
+            className="w-full aspect-[1200/630] object-cover block"
           >
             <source src="/Inspiration banner.mp4" type="video/mp4" />
           </video>

@@ -71,7 +71,7 @@ export default function Navigation() {
               <img src="/Untitled_design_(5).png" alt="Bespoke By Pelican" className="h-10 w-auto object-contain" />
             </span>
             <span className="block md:hidden">
-              <img src="/logoPhone.png" alt="Bespoke By Pelican" style={{ height: '40px', width: 'auto', objectFit: 'contain', filter: 'brightness(1.1) contrast(1.1)' }} />
+              <img src="/logophonenew.png" alt="Bespoke By Pelican" style={{ height: '40px', width: 'auto', objectFit: 'contain', filter: 'brightness(1.1) contrast(1.1)' }} />
             </span>
           </Link>
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import RevealText from './RevealText';
 
 export default function HeroSection() {
   return (
@@ -28,7 +29,7 @@ export default function HeroSection() {
               color: '#1A1A1A',
             }}
           >
-            At Bespoke by Pelican,
+            <RevealText text="At Bespoke by Pelican," staggerDelay={0.1} duration={0.9} />
           </h1>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', color: '#6B6560', fontFamily: "'Montserrat', sans-serif" }}>

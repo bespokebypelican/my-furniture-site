@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import '../styles/carousel.css';
+import RevealText from './components/RevealText';
 import AnnouncementBar from './components/AnnouncementBar';
 import Navigation from './components/Navigation';
 import HeroSection from './components/HeroSection';
@@ -115,7 +116,7 @@ export default function App() {
 
                   {/* Heading */}
                   <h2 className="uppercase tracking-[0.25em] text-[#1a1a1a] text-[28px] lg:text-[32px] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
-                    Discovery
+                    <RevealText text="Discovery" />
                   </h2>
 
                   {/* Body Text */}
@@ -260,7 +261,7 @@ export default function App() {
 
                   {/* Heading */}
                   <h2 className="uppercase tracking-[0.25em] text-[#1a1a1a] text-[28px] lg:text-[32px] mb-6 leading-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
-                    Development
+                    <RevealText text="Development" />
                   </h2>
 
                   {/* Body Text */}
@@ -281,7 +282,7 @@ export default function App() {
       <section id="contact" className="w-full px-4 md:px-8" style={{ backgroundColor: '#EDE9E0', padding: '64px 32px' }}>
         <div className="max-w-[1000px] mx-auto flex flex-col items-center">
           <h2 className="text-center text-[32px] md:text-[42px] lg:text-[48px] mb-[32px] md:mb-[40px] lg:mb-[48px] text-[#2a2a2a] tracking-tight" style={{ fontFamily: "'Playfair Display SC', serif" }}>
-            Contact
+            <RevealText text="Contact" />
           </h2>
           <div className="w-full max-w-[800px]">
             <form onSubmit={handleSubmit} className="space-y-6">

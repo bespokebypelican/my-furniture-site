@@ -12,7 +12,7 @@ interface FurnitureCardProps {
   aspectRatio?: string;
 }
 
-export function FurnitureCard({ imageUrl, title, category, isActive, onTap, aspectRatio = '4/3' }: FurnitureCardProps) {
+export function FurnitureCard({ imageUrl, title, category, isActive, onTap }: FurnitureCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const isTouch = typeof window !== "undefined" && window.matchMedia("(hover: none)").matches;
   const showPanel = isTouch ? isActive : isHovered;
@@ -20,7 +20,7 @@ export function FurnitureCard({ imageUrl, title, category, isActive, onTap, aspe
   return (
     <div
       className="relative overflow-hidden cursor-pointer w-full"
-      style={{ borderRadius: 0, aspectRatio }}
+      style={{ borderRadius: 0 }}
       onMouseEnter={() => { if (!isTouch) setIsHovered(true); }}
       onMouseLeave={() => { if (!isTouch) setIsHovered(false); }}
       onClick={onTap}
@@ -28,9 +28,10 @@ export function FurnitureCard({ imageUrl, title, category, isActive, onTap, aspe
       <Image
         src={imageUrl}
         alt={title}
-        fill
-        style={{ objectFit: 'cover' }}
-        sizes="(max-width: 480px) 50vw, (max-width: 768px) 50vw, 33vw"
+        width={800}
+        height={600}
+        className="w-full h-auto"
+        sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
       />
 
       <motion.div

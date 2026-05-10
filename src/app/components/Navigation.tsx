@@ -68,10 +68,10 @@ export default function Navigation() {
         <div className="max-w-[1400px] mx-auto flex items-center justify-between">
           <Link href="/" className="block">
             <span className="hidden md:block">
-              <img src="/Navbar-logo.png" alt="Bespoke By Pelican" className="h-10 w-auto object-contain" />
+              <img src="/Navbar-logo.png" alt="Bespoke By Pelican" className="h-14 w-auto object-contain" />
             </span>
             <span className="block md:hidden">
-              <img src="/logophonenew.png" alt="Bespoke By Pelican" style={{ height: '40px', width: 'auto', objectFit: 'contain', filter: 'brightness(1.1) contrast(1.1)' }} />
+              <img src="/logophonenew.png" alt="Bespoke By Pelican" style={{ height: '48px', width: 'auto', objectFit: 'contain', filter: 'brightness(1.1) contrast(1.1)' }} />
             </span>
           </Link>
 

@@ -4,7 +4,8 @@ import dynamic from "next/dynamic";
 import { supabase } from "../../../lib/supabase";
 
 const FurnitureCard = dynamic(() => import("./FurnitureCard").then(m => ({ default: m.FurnitureCard })), { ssr: false });
-import { Search, ChevronDown } from "lucide-react";
+import { Search } from "lucide-react";
+import Dropdown from "./Dropdown";
 
 type SupabasePhoto = {
   id: number;
@@ -75,47 +76,41 @@ export function CollageLayout() {
               style={{ width: "100%", border: "1px solid #e0e0e0", fontSize: "14px", paddingLeft: "44px", paddingRight: "16px", paddingTop: "10px", paddingBottom: "10px", outline: "none", color: "#2a2a2a", backgroundColor: "white" }}
             />
           </div>
-          <div style={{ position: "relative", flex: "1 1 110px" }}>
-            <select
-              className="insp-select"
+          <div style={{ flex: "1 1 110px" }}>
+            <Dropdown
+              placeholder="Category"
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              style={{ width: "100%", appearance: "none", border: "1px solid #e0e0e0", fontSize: "14px", padding: "10px 32px 10px 12px", outline: "none", cursor: "pointer", color: "#000" }}
-            >
-              <option value="">Category</option>
-              <option value="Living Room">Living Room</option>
-              <option value="Dining Room">Dining Room</option>
-              <option value="Bedroom">Bedroom</option>
-            </select>
-            <ChevronDown style={{ position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)", color: "#999", pointerEvents: "none" }} size={16} />
+              onChange={(val) => setCategory(val)}
+              options={[
+                { value: "Living Room", label: "Living Room" },
+                { value: "Dining Room", label: "Dining Room" },
+                { value: "Bedroom", label: "Bedroom" },
+              ]}
+            />
           </div>
-          <div style={{ position: "relative", flex: "1 1 110px" }}>
-            <select
-              className="insp-select"
+          <div style={{ flex: "1 1 110px" }}>
+            <Dropdown
+              placeholder="Style"
               value={style}
-              onChange={(e) => setStyle(e.target.value)}
-              style={{ width: "100%", appearance: "none", border: "1px solid #e0e0e0", fontSize: "14px", padding: "10px 32px 10px 12px", outline: "none", cursor: "pointer", color: "#000" }}
-            >
-              <option value="">Style</option>
-              <option value="Modern">Modern</option>
-              <option value="Minimal">Minimal</option>
-              <option value="Classic">Classic</option>
-            </select>
-            <ChevronDown style={{ position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)", color: "#999", pointerEvents: "none" }} size={16} />
+              onChange={(val) => setStyle(val)}
+              options={[
+                { value: "Modern", label: "Modern" },
+                { value: "Minimal", label: "Minimal" },
+                { value: "Classic", label: "Classic" },
+              ]}
+            />
           </div>
-          <div style={{ position: "relative", flex: "1 1 110px" }}>
-            <select
-              className="insp-select"
+          <div style={{ flex: "1 1 110px" }}>
+            <Dropdown
+              placeholder="Tone"
               value={tone}
-              onChange={(e) => setTone(e.target.value)}
-              style={{ width: "100%", appearance: "none", border: "1px solid #e0e0e0", fontSize: "14px", padding: "10px 32px 10px 12px", outline: "none", cursor: "pointer", color: "#000" }}
-            >
-              <option value="">Tone</option>
-              <option value="Neutral">Neutral</option>
-              <option value="Warm">Warm</option>
-              <option value="Cool">Cool</option>
-            </select>
-            <ChevronDown style={{ position: "absolute", right: "8px", top: "50%", transform: "translateY(-50%)", color: "#999", pointerEvents: "none" }} size={16} />
+              onChange={(val) => setTone(val)}
+              options={[
+                { value: "Neutral", label: "Neutral" },
+                { value: "Warm", label: "Warm" },
+                { value: "Cool", label: "Cool" },
+              ]}
+            />
           </div>
         </div>
         <style>{`

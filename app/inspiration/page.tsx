@@ -25,7 +25,7 @@ export default function Page() {
             loop
             muted
             playsInline
-            className="w-full aspect-[1200/630] object-cover block"
+            className="w-full aspect-[1200/400] object-cover block"
           >
             <source src="/Inspiration banner.mp4" type="video/mp4" />
           </video>

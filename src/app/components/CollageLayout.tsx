@@ -122,9 +122,9 @@ export function CollageLayout() {
       </div>
 
       {/* Masonry Grid */}
-      <div style={{ columns: "3", columnGap: "8px", width: "100%" }} className="masonry-grid">
+      <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
         {photos.map((item, index) => (
-          <div key={item.id} style={{ breakInside: "avoid", marginBottom: "8px" }}>
+          <div key={item.id} className="break-inside-avoid mb-3">
             <FurnitureCard
               imageUrl={item.imageUrl}
               title={item.title}
@@ -136,10 +136,6 @@ export function CollageLayout() {
           </div>
         ))}
       </div>
-      <style>{`
-        @media (max-width: 768px) { .masonry-grid { columns: 2 !important; } }
-        @media (max-width: 480px) { .masonry-grid { columns: 2 !important; } }
-      `}</style>
     </div>
   );
 }

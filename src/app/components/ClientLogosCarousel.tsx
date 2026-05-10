@@ -7,16 +7,16 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const clientLogos = [
-  { src: '/clients/client-raja.png', alt: 'RAJA' },
-  { src: '/clients/client-pioneer-fil-med.png', alt: 'Pioneer Fil-Med Limited' },
-  { src: '/clients/client-great-destinations.png', alt: 'Great Destinations Hotels & Resorts' },
-  { src: '/clients/client-rosetta.png', alt: 'Rosetta Hospitality' },
-  { src: '/clients/client-suyug.png', alt: 'SUYUG' },
-  { src: '/clients/client-white-shadows.png', alt: 'White Shadows Design Studio' },
-  { src: '/clients/client-wesmarc.png', alt: 'Wesmarc Super Doors' },
-  { src: '/clients/client-udb.png', alt: 'Universal Design Build' },
-  { src: '/clients/client-quadri-icon.png', alt: 'Quadri' },
-  { src: '/clients/client-house-of-quadri.png', alt: 'House of Quadri' },
+  { src: '/clients/client-raja.png', alt: 'RAJA', url: 'https://www.rajabuilders.in/raja-capital' },
+  { src: '/clients/client-pioneer-fil-med.png', alt: 'Pioneer Fil-Med Limited', url: 'https://pioneerfilmed.com/' },
+  { src: '/clients/client-great-destinations.png', alt: 'Great Destinations Hotels & Resorts', url: 'https://gdhotels.in/' },
+  { src: '/clients/client-rosetta.png', alt: 'Rosetta Hospitality', url: 'https://rosettahospitality.com/' },
+  { src: '/clients/client-suyug.png', alt: 'SUYUG', url: 'https://www.suyug.com/' },
+  { src: '/clients/client-white-shadows.png', alt: 'White Shadows Design Studio', url: 'https://www.white-shadows.in/' },
+  { src: '/clients/client-wesmarc.png', alt: 'Wesmarc Super Doors', url: 'https://wesmarcdoors.com/' },
+  { src: '/clients/client-udb.png', alt: 'Universal Design Build', url: 'https://universaldesignbuild.in' },
+  { src: '/clients/client-quadri-icon.png', alt: 'Quadri', url: 'https://www.indiaquotient.in/' },
+  { src: '/clients/client-house-of-quadri.png', alt: 'House of Quadri', url: 'https://houseofquadri.com/' },
 ];
 
 const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
@@ -91,11 +91,13 @@ export default function ClientLogosCarousel() {
             {clientLogos.map((logo, index) => (
               <div key={index} className="px-2 md:px-4">
                 <div className="grayscale opacity-50 hover:opacity-90 hover:grayscale-0 transition-all duration-500 flex items-center justify-center h-20 md:h-24">
-                  <ImageWithFallback
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="max-h-16 md:max-h-20 w-auto object-contain mx-auto filter drop-shadow-sm"
-                  />
+                  <a href={logo.url} target="_blank" rel="noopener noreferrer" className="block">
+                    <ImageWithFallback
+                      src={logo.src}
+                      alt={logo.alt}
+                      className="max-h-16 md:max-h-20 w-auto object-contain mx-auto filter drop-shadow-sm"
+                    />
+                  </a>
                 </div>
               </div>
             ))}

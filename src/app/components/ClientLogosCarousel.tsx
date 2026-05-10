@@ -6,14 +6,16 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
 
 const clientLogos = [
-  'https://images.unsplash.com/photo-1660792734675-63a875d406b3?w=250&h=100&fit=crop&auto=format',
-  'https://images.unsplash.com/photo-1769985090420-087bc0a62ba3?w=250&h=100&fit=crop&auto=format',
-  'https://images.unsplash.com/photo-1597979732130-9d2ad18df38b?w=250&h=100&fit=crop&auto=format',
-  'https://images.unsplash.com/photo-1719716133741-9f8f35b3cb04?w=250&h=100&fit=crop&auto=format',
-  'https://images.unsplash.com/photo-1654277041218-84424c78f0ae?w=250&h=100&fit=crop&auto=format',
-  'https://images.unsplash.com/photo-1660792734675-63a875d406b3?w=250&h=100&fit=crop&auto=format',
-  'https://images.unsplash.com/photo-1769985090420-087bc0a62ba3?w=250&h=100&fit=crop&auto=format',
-  'https://images.unsplash.com/photo-1597979732130-9d2ad18df38b?w=250&h=100&fit=crop&auto=format',
+  { src: '/clients/client-raja.png', alt: 'RAJA' },
+  { src: '/clients/client-pioneer-fil-med.png', alt: 'Pioneer Fil-Med Limited' },
+  { src: '/clients/client-great-destinations.png', alt: 'Great Destinations Hotels & Resorts' },
+  { src: '/clients/client-rosetta.png', alt: 'Rosetta Hospitality' },
+  { src: '/clients/client-suyug.png', alt: 'SUYUG' },
+  { src: '/clients/client-white-shadows.png', alt: 'White Shadows Design Studio' },
+  { src: '/clients/client-wesmarc.png', alt: 'Wesmarc Super Doors' },
+  { src: '/clients/client-udb.png', alt: 'Universal Design Build' },
+  { src: '/clients/client-quadri-icon.png', alt: 'Quadri' },
+  { src: '/clients/client-house-of-quadri.png', alt: 'House of Quadri' },
 ];
 
 const PrevArrow = ({ onClick }: { onClick?: () => void }) => (
@@ -69,8 +71,8 @@ export default function ClientLogosCarousel() {
               <div key={index} className="px-2 md:px-4">
                 <div className="grayscale opacity-50 hover:opacity-90 hover:grayscale-0 transition-all duration-500 flex items-center justify-center h-20 md:h-24">
                   <ImageWithFallback
-                    src={logo}
-                    alt={`Client logo ${index + 1}`}
+                    src={logo.src}
+                    alt={logo.alt}
                     className="max-h-16 md:max-h-20 w-auto object-contain mx-auto filter drop-shadow-sm"
                   />
                 </div>

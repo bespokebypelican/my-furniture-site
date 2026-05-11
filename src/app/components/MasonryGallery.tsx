@@ -5,11 +5,11 @@ type BrandCard = { brand: true; url: string };
 type Item = Product | BrandCard;
 
 const items: Item[] = [
-  { src: '/aari bed.jpeg',    name: 'Aari Bed',             url: 'https://pelicanessentials.com/products/aari-bed-solid-teak-walnut-oak-wood' },
+  { src: '/slumbr1.jpeg',     name: 'Aari Bed',             url: 'https://pelicanessentials.com/products/slumbr-sleeper-sofa-sofa-cum-bed-7-feet?_pos=1&_psq=slumbr&_ss=e&_v=1.0' },
   { src: '/Mowa bed.jpeg',    name: 'Mowa Bed',             url: 'https://pelicanessentials.com/products/mowa-bed-solid-teak-wood-queen' },
   { src: '/lore1.jpeg',       name: 'Lore 3 Seater',        url: 'https://pelicanessentials.com/products/heranca-3-seater' },
   { src: '/serenity.jpeg',    name: 'Serenity Table',       url: 'https://pelicanessentials.com/products/serenity-table-5x3-feet-solid-teak' },
-  { src: '/slumbr.jpeg',      name: 'Slumbr Sofa Cum Bed',  url: 'https://pelicanessentials.com/products/slumbr-sleeper-sofa-sofa-cum-bed-7-feet' },
+  { src: '/anne3.jpeg',       name: 'Slumbr Sofa Cum Bed',  url: 'https://pelicanessentials.com/products/anne-sofa-3-seater-down-feather-cushion-7-feet-copy?_pos=2&_psq=anne+3&_ss=e&_v=1.0' },
   { brand: true,                                             url: 'https://pelicanessentials.com' },
   { src: '/palo leather.jpeg',name: 'Palo Sofa — Leather',  url: 'https://pelicanessentials.com/products/palo-sofa-3-seater-7-5-feet-genuine-leather' },
   { src: '/lumo.jpeg',        name: 'Lumo Sofa',            url: 'https://pelicanessentials.com/collections/lumo-sofa-sets' },

@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import '../styles/carousel.css';
 import RevealText from './components/RevealText';
@@ -17,6 +17,23 @@ export default function App() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
   const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [formError, setFormError] = useState('');
+
+  const scrollFired = useRef({ 50: false, 100: false });
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+      if (scrolled >= 50 && !scrollFired.current[50]) {
+        scrollFired.current[50] = true;
+        window.gtag?.('event', 'scroll_depth_50');
+      }
+      if (scrolled >= 100 && !scrollFired.current[100]) {
+        scrollFired.current[100] = true;
+        window.gtag?.('event', 'scroll_depth_100');
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

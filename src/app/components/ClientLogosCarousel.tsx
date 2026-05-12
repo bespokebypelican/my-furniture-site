@@ -91,7 +91,7 @@ export default function ClientLogosCarousel() {
             {clientLogos.map((logo, index) => (
               <div key={index} className="px-2 md:px-4">
                 <div className="grayscale opacity-50 hover:opacity-90 hover:grayscale-0 transition-all duration-500 flex items-center justify-center h-20 md:h-24">
-                  <a href={logo.url} target="_blank" rel="noopener noreferrer" className="block">
+                  <a href={logo.url} target="_blank" rel="noopener noreferrer" className="block" onClick={() => { window.gtag?.('event', 'client_logo_click', { logo_name: logo.alt }); }}>
                     <ImageWithFallback
                       src={logo.src}
                       alt={logo.alt}

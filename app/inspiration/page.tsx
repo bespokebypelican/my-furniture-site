@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { CollageLayout } from "../../src/app/components/CollageLayout";
+import { InspirationAnalytics } from "../../src/app/components/InspirationAnalytics";
 import AnnouncementBar from "../../src/app/components/AnnouncementBar";
 import Navigation from "../../src/app/components/Navigation";
 import Footer from "../../src/app/components/Footer";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#faf9f7", width: "100%", overflowX: "hidden" }}>
+      <InspirationAnalytics />
       <AnnouncementBar />
       <Navigation />
       <div className="mx-auto" style={{ maxWidth: "1400px", width: "100%", padding: "32px 16px" }}>

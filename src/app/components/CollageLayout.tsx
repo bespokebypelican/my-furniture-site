@@ -82,9 +82,13 @@ export function CollageLayout() {
               value={category}
               onChange={(val) => setCategory(val)}
               options={[
-                { value: "Living Room", label: "Living Room" },
-                { value: "Dining Room", label: "Dining Room" },
-                { value: "Bedroom", label: "Bedroom" },
+                { value: "Chair", label: "Chair" },
+                { value: "Sofa", label: "Sofa" },
+                { value: "Coffee Table", label: "Coffee Table" },
+                { value: "Dining", label: "Dining" },
+                { value: "Desk", label: "Desk" },
+                { value: "Bed", label: "Bed" },
+                { value: "Side Table", label: "Side Table" },
               ]}
             />
           </div>

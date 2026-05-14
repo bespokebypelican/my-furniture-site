@@ -34,7 +34,7 @@ export default function HeroSection() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', color: '#6B6560', fontFamily: "'Montserrat', sans-serif" }}>
             <p style={{ fontSize: 'clamp(15px, 2vw, 18px)', lineHeight: 1.9, letterSpacing: '0.01em' }}>
-              We craft furniture solutions precisely tuned to your environment, your story, and your space. Every piece is designed as an experience — global in perspective, bespoke in execution, rooted in narrative.
+              we craft furniture solutions precisely tuned to your environment, your story, and your space. Every piece is designed as an experience — global in perspective, bespoke in execution, rooted in narrative.
             </p>
 
             <p style={{ fontSize: 'clamp(15px, 2vw, 18px)', lineHeight: 1.9, letterSpacing: '0.01em' }}>

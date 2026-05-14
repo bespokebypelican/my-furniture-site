@@ -69,8 +69,7 @@ export default function App() {
         <section className="w-full px-4 md:px-8" style={{ backgroundColor: '#F7F4EE', padding: '64px 32px' }}>
           <div className="max-w-[800px] mx-auto flex flex-col items-center text-center">
             <p style={{ color: '#6B6560', fontSize: '17px', lineHeight: 2, letterSpacing: '0.01em', fontWeight: 300 }}>
-              We believe every project presents an opportunity for exploration and innovation
-              We are committed to enhance your spaces with function & aesthetics, executing with highest level of conduct and a culmination that exceeds expectations.
+              Every project is an opportunity to create something unrepeatable. We are committed to elevating your space with function and beauty, executing at the highest standard, with results that consistently exceed expectations.
             </p>
           </div>
         </section>
@@ -93,7 +92,7 @@ export default function App() {
               />
             </div>
             <p className="text-[#4a4a4a] text-[16px] leading-[1.9] tracking-[0.01em]">
-              The first step is to navigate through the numerous, seemingly infinite, choices of this world. We help you find the right designs that not just fit your space but are more, an extension of self
+              The first step is navigating the seemingly infinite choices available today. We help you find designs that don't just fit your space — but become a true extension of who you are.
             </p>
           </div>
 
@@ -138,7 +137,7 @@ export default function App() {
 
                   {/* Body Text */}
                   <p className="text-[#4a4a4a] text-[17px] leading-[2] tracking-[0.01em]">
-                    The first step is to navigate through the numerous, seemingly infinite, choices of this world. We help you find the right designs that not just fit your space but are more, an extension of self
+                    The first step is navigating the seemingly infinite choices available today. We help you find designs that don't just fit your space — but become a true extension of who you are.
                   </p>
                 </div>
               </div>
@@ -164,8 +163,7 @@ export default function App() {
               />
             </div>
             <p className="text-[#4a4a4a] text-[16px] leading-[1.9] tracking-[0.01em]">
-              Product design merges functionality, aesthetics, and user experience to transform abstract ideas into tangible, manageable forms
-              It is where creativity meets rigorous technical execution, applying science, mathematics, and engineering principles, as we precisely define the blueprint.
+              Product design merges functionality, aesthetics, and user experience to transform abstract ideas into tangible form. It is where creativity meets rigorous technical execution — applying engineering principles as we precisely define every detail of the blueprint.
             </p>
           </div>
 
@@ -210,8 +208,7 @@ export default function App() {
 
                   {/* Body Text */}
                   <p className="text-[#4a4a4a] text-[17px] leading-[2] tracking-[0.01em]">
-                    Product design merges functionality, aesthetics, and user experience to transform abstract ideas into tangible, manageable forms
-                    It is where creativity meets rigorous technical execution, applying science, mathematics, and engineering principles, as we precisely define the blueprint.
+                    Product design merges functionality, aesthetics, and user experience to transform abstract ideas into tangible form. It is where creativity meets rigorous technical execution — applying engineering principles as we precisely define every detail of the blueprint.
                   </p>
                 </div>
               </div>
@@ -237,8 +234,7 @@ export default function App() {
               />
             </div>
             <p className="text-[#4a4a4a] text-[16px] leading-[1.9] tracking-[0.01em]">
-              Beyond the specification and into the theater of its creation as we bring the design to tangibility.
-              When a piece is commissioned rather than "bought," the creation stage ceases to be a linear process of assembly and becomes a balanced blend of technical manufacturing and soulful crafting.
+              Beyond the specification and into the making — where design becomes reality. When a piece is commissioned rather than bought, creation is no longer a linear process of assembly. It becomes a balanced blend of precision manufacturing and soulful craftsmanship, unique to every client.
             </p>
           </div>
 
@@ -283,8 +279,7 @@ export default function App() {
 
                   {/* Body Text */}
                   <p className="text-[#4a4a4a] text-[17px] leading-[2] tracking-[0.01em]">
-                    Beyond the specification and into the theater of its creation as we bring the design to tangibility.
-                    When a piece is commissioned rather than "bought," the creation stage ceases to be a linear process of assembly and becomes a balanced blend of technical manufacturing and soulful crafting.
+                    Beyond the specification and into the making — where design becomes reality. When a piece is commissioned rather than bought, creation is no longer a linear process of assembly. It becomes a balanced blend of precision manufacturing and soulful craftsmanship, unique to every client.
                   </p>
                 </div>
               </div>

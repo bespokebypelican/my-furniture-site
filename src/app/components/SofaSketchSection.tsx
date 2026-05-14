@@ -14,10 +14,9 @@ export default function SofaSketchSection() {
 
         <div className="text-center w-full max-w-[700px] px-4">
           <p className="text-[16px] md:text-[17px] lg:text-[18px] leading-[1.9] md:leading-[2] text-[#3a3a3a] tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            As an experienced furniture manufacturer and multidisciplinary creative
-            collective, we transform architectural visions into tangible reality. Our
+            As an experienced custom furniture manufacturer based in Bengaluru, we transform architectural visions into tangible reality. Our
             design language speaks through clean lines, precise joinery, and materials
-            chosen for their inherent beauty and longevity.
+            chosen for their inherent beauty and longevity — built to endure decades, not seasons.
           </p>
         </div>
       </div>

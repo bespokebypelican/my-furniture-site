@@ -106,8 +106,8 @@ export default function MasonryGallery({ id }: { id?: string }) {
 
         <div className="text-center w-full max-w-[750px] px-4">
           <p className="text-[16px] md:text-[17px] lg:text-[18px] leading-[1.9] md:leading-[2] text-[#3a3a3a] tracking-[0.01em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
-            For years we have designed and built premium custom furniture trusted by homeowners, hospitality brands, and architects across India. We bring
-            cross-industry expertise to every commission — handcrafted in Bengaluru, delivered across the country.
+            We have been a leading furniture brand participating in design and manufacturing of premium functional furniture.
+            Today, we are a dynamic and multidisciplinary creative collective, bringing years of experience to bear across specialisms, markets and industries.
           </p>
         </div>
       </div>

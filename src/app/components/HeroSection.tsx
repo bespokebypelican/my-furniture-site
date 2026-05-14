@@ -34,11 +34,12 @@ export default function HeroSection() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', color: '#6B6560', fontFamily: "'Montserrat', sans-serif" }}>
             <p style={{ fontSize: 'clamp(15px, 2vw, 18px)', lineHeight: 1.9, letterSpacing: '0.01em' }}>
-              we craft furniture solutions precisely tuned to your environment, your story, and your space. Every piece is designed as an experience — global in perspective, bespoke in execution, rooted in narrative.
+              we aim to demonstrate our expertise in creating furniture solutions fine tuned to your environment.
+              We curate product design as experience — global in perspective, bespoke in execution, and rooted in narrative.
             </p>
 
             <p style={{ fontSize: 'clamp(15px, 2vw, 18px)', lineHeight: 1.9, letterSpacing: '0.01em' }}>
-              We give form to your ideas through a precise blend of engineering and craftsmanship — built in Bengaluru, built to last.
+              We give form to your ideas redefining how stories are told through a blend of engineering and craftsmanship.
             </p>
           </div>
         </div>

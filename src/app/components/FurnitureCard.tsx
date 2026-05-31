@@ -32,6 +32,7 @@ export function FurnitureCard({ imageUrl, title, category, isActive, onTap }: Fu
         height={600}
         className="w-full h-auto"
         sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, 25vw"
+        unoptimized={true}
       />
 
       <motion.div

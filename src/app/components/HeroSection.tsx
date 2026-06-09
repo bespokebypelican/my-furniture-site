@@ -14,6 +14,7 @@ export default function HeroSection() {
             alt="Luxury modern sectional sofa"
             fill
             priority
+            unoptimized={true}
             className="object-cover grayscale-[25%] contrast-105 hover:grayscale-0 transition-all duration-700"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1200px"
           />
